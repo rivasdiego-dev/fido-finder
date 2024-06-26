@@ -1,4 +1,3 @@
-
 type AppLogoProps = {
     includeSlogan?: boolean;
 }
