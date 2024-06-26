@@ -1,12 +1,14 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import AppLayout from "../views/layouts/AppLayout";
 import AuthLayout from "../views/layouts/AuthLayout";
+import Login from "../views/pages/Login";
+import VerifyToken from "../views/pages/VerifyToken";
 
 export const router = createBrowserRouter(createRoutesFromElements(
     <Route errorElement={<div> const error = useRouteError(); Error </div>}>
         <Route element={<AuthLayout />}>
-            <Route path="/login" element={<>Some login</>} />
-            <Route path="auth/verify-token" element={<>Verify token</>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="auth/verify" element={<VerifyToken />} />
         </Route>
 
         <Route element={<AppLayout />}>
