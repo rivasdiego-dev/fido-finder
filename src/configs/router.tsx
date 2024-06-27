@@ -13,15 +13,14 @@ export const router = createBrowserRouter(
         <Route path="auth/verify" element={<VerifyToken />} />
       </Route>
 
-        <Route element={<AuthGuard />}>
-            <Route element={<AppLayout />}>
-                <Route index path="/" element={<>Home Page</>} />
-                <Route path="/pet-map" element={<>Map of lost pets</>} />
-                <Route path="/search" element={<>Search a lost pet</>} />
-                <Route path="/new-post" element={<>Post a new lost pet </>} />
-                <Route path="/profile" element={<>User profile</>} />
-            </Route>
-        </Route>
+      <Route element={<AuthGuard />}>
+          <Route element={<AppLayout />}>
+              <Route index path="/" element={<>Home Page</>} />
+              <Route path="/pet-map" element={<>Map of lost pets</>} />
+              <Route path="/search" element={<>Search a lost pet</>} />
+              <Route path="/new-post" element={<>Post a new lost pet </>} />
+              <Route path="/profile" element={<>User profile</>} />
+          </Route>
       </Route>
     </Route>
   )
