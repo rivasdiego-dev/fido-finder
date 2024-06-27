@@ -17,7 +17,7 @@ const NotRegistered = () => {
           experiencia completa.
         </p>
         <div className="flex justify-center gap-2 w-full">
-          <Button color="primary" variant="flat">
+          <Button color="primary" variant="flat" fullWidth={true}>
             Completar luego
           </Button>
           <Button color="primary" variant="solid">
