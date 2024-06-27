@@ -5,27 +5,37 @@ import Loader from "../Loader";
 import { useUserStore } from "../../../lib/store/user";
 
 export default function VerifyToken() {
-
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
-    const setUser = useUserStore(state => state.setUser);
     const token = searchParams.get('token');
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            const { response, isError } = await WhoAmI(token as string)
-            if (!isError) {
-                setUser(response.data);
-                navigate('/');
-            }
-            else
-                navigate('/login');
-        }
-        if (token)
-            fetchUser();
-    }, [token, navigate, setUser])
+    const setUser = useUserStore((state) => state.setUser);
+    const setToken = useUserStore((state) => state.setToken);
 
-    return (
-        <Loader />
-    )
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+            return;
+        }
+
+        const fetchUser = async () => {
+            try {
+                const { response, isError } = await WhoAmI(token);
+                if (!isError) {
+                    setUser(response.data);
+                    setToken(token);
+                    navigate('/');
+                } else {
+                    throw new Error('Token verification failed');
+                }
+            } catch (error) {
+                console.error(error);
+                navigate('/login');
+            }
+        };
+
+        fetchUser();
+    }, [token, navigate, setUser, setToken]);
+
+    return <Loader />;
 }
