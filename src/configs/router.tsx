@@ -5,12 +5,13 @@ import Login from "../views/pages/Login";
 import VerifyToken from "../views/pages/VerifyToken";
 import AuthGuard from "../components/guards/AuthGuard";
 
-export const router = createBrowserRouter(createRoutesFromElements(
+export const router = createBrowserRouter(
+  createRoutesFromElements(
     <Route errorElement={<div> const error = useRouteError(); Error </div>}>
-        <Route element={<AuthLayout />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="auth/verify" element={<VerifyToken />} />
-        </Route>
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="auth/verify" element={<VerifyToken />} />
+      </Route>
 
         <Route element={<AuthGuard />}>
             <Route element={<AppLayout />}>
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(createRoutesFromElements(
                 <Route path="/profile" element={<>User profile</>} />
             </Route>
         </Route>
+      </Route>
     </Route>
-));
-
+  )
+);
