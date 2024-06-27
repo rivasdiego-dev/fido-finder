@@ -1,5 +1,5 @@
-import { IconMenu2 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import AppBarMenu from "../../atoms/AppBarMenu";
 
 export default function AppBar() {
     return (
@@ -9,7 +9,7 @@ export default function AppBar() {
                 <p className="font-quicksand text-lg font-semibold"> FidoFinder </p>
             </Link>
             <div className="flex gap-4">
-                <IconMenu2 size={28} />
+                <AppBarMenu />
             </div>
         </div>
     )
