@@ -10,6 +10,7 @@ import VerifyToken from '../views/pages/VerifyToken';
 import AuthGuard from '../components/guards/AuthGuard';
 import User from '../views/pages/User';
 import Home from '../views/pages/Home';
+import Pet from '../views/pages/Pet';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,7 @@ export const router = createBrowserRouter(
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
           <Route path="/new-post" element={<>Post a new lost pet </>} />
-          <Route path="/profile" element={<User />} />
+          <Route path="/profile" element={<Pet />} />
         </Route>
       </Route>
     </Route>
