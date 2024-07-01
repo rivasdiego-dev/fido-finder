@@ -11,6 +11,7 @@ import AuthGuard from '../components/guards/AuthGuard';
 import User from '../views/pages/User';
 import Home from '../views/pages/Home';
 import Pet from '../views/pages/Pet';
+import EditUser from '../views/pages/EditUser';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,15 +21,15 @@ export const router = createBrowserRouter(
         <Route path="auth/verify" element={<VerifyToken />} />
       </Route>
 
-      <Route element={<AuthGuard />}>
-        <Route element={<AppLayout />}>
-          <Route index path="/" element={<Home />} />
-          <Route path="/pet-map" element={<>Map of lost pets</>} />
-          <Route path="/search" element={<>Search a lost pet</>} />
-          <Route path="/new-post" element={<>Post a new lost pet </>} />
-          <Route path="/profile" element={<Pet />} />
-        </Route>
+      {/* <Route element={<AuthGuard />}> */}
+      <Route element={<AppLayout />}>
+        <Route index path="/" element={<Home />} />
+        <Route path="/pet-map" element={<>Map of lost pets</>} />
+        <Route path="/search" element={<>Search a lost pet</>} />
+        <Route path="/new-post" element={<>Post a new lost pet </>} />
+        <Route path="/profile" element={<EditUser />} />
       </Route>
+      {/* </Route> */}
     </Route>
   )
 );
