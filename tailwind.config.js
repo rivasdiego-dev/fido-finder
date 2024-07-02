@@ -73,7 +73,7 @@ export default {
             '700': '#1F4F85',
             '800': '#1E446E',
             '900': '#1B3554',
-            'DEFAULT': '#1F4F85',
+            'DEFAULT': '#4285F4',
             foreground: "#EEEEEE",
           },
           secondary: {
