@@ -12,6 +12,7 @@ import User from '../views/pages/User';
 import Home from '../views/pages/Home';
 import Pet from '../views/pages/Pet';
 import EditUser from '../views/pages/EditUser';
+import EditResidence from '../views/pages/EditResidence';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,7 @@ export const router = createBrowserRouter(
         <Route path="/pet-map" element={<>Map of lost pets</>} />
         <Route path="/search" element={<>Search a lost pet</>} />
         <Route path="/new-post" element={<>Post a new lost pet </>} />
-        <Route path="/profile" element={<EditUser />} />
+        <Route path="/profile" element={<EditResidence />} />
       </Route>
       {/* </Route> */}
     </Route>
