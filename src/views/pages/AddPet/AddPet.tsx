@@ -5,8 +5,13 @@ import CustomInput from '../../../components/molecules/CustomInput';
 import { petFormSchema, typePetFormSchema } from '../../../lib/schemas/PetForm';
 import InputImage from '../../../components/molecules/ImageInput/ImageInput';
 import { Button } from '@nextui-org/react';
+import CustomTextArea from '../../../components/molecules/CustomTextArea';
+import { useLoaderData } from 'react-router-dom';
+import CustomSelect from '../../../components/molecules/CustomSelect';
 
 export default function AddPet() {
+
+    const { breeds, colors } = useLoaderData() as { breeds: { value: string; label: string }[], colors: { value: string; label: string }[] };
 
     const { register, handleSubmit, formState: { errors } } = useForm<typePetFormSchema>({
         resolver: zodResolver(petFormSchema),
@@ -23,30 +28,32 @@ export default function AddPet() {
             <InputImage
                 inputLabel='Podras ver a tu mascota aquí'
                 fileState={image}
-                className='mb-2'
+                className='mb-4'
             />
-            <div className='flex flex-col gap-4 mb-8'>
+            <div className='flex flex-col gap-3 mb-8'>
                 <CustomInput
                     id='name'
                     label="Nombre"
                     register={register}
                     errors={errors}
                 />
-                <CustomInput
-                    id='type'
-                    label="Tipo"
-                    register={register}
-                    errors={errors}
-                />
-                <CustomInput
+                <CustomSelect
                     id='breed'
                     label="Raza"
+                    options={breeds}
                     register={register}
                     errors={errors}
                 />
-                <CustomInput
+                <CustomSelect
                     id='color'
                     label="Color"
+                    options={colors}
+                    register={register}
+                    errors={errors}
+                />
+                <CustomTextArea
+                    id='description'
+                    label='Descripción'
                     register={register}
                     errors={errors}
                 />

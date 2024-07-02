@@ -3,14 +3,15 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
+import AuthGuard from '../components/guards/AuthGuard';
+import AddPetLoader from '../lib/loaders/AddPetLoader';
 import AppLayout from '../views/layouts/AppLayout';
 import AuthLayout from '../views/layouts/AuthLayout';
-import Login from '../views/pages/Login';
-import VerifyToken from '../views/pages/VerifyToken';
-import AuthGuard from '../components/guards/AuthGuard';
-import User from '../views/pages/User';
-import Home from '../views/pages/Home';
 import AddPet from '../views/pages/AddPet';
+import Home from '../views/pages/Home';
+import Login from '../views/pages/Login';
+import User from '../views/pages/User';
+import VerifyToken from '../views/pages/VerifyToken';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,9 @@ export const router = createBrowserRouter(
           <Route path="/search" element={<>Search a lost pet</>} />
           <Route path="/new-post" element={<>Post a new lost pet </>} />
           <Route path="/profile" element={<User />} />
-          <Route path="/profile/add-pet" element={<AddPet />} />
+          <Route path="/profile/add-pet" element={<AddPet />}
+            loader={AddPetLoader}
+          />
         </Route>
       </Route>
     </Route>
