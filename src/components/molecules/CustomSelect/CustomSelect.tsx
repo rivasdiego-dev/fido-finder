@@ -15,7 +15,14 @@ export default function CustomSelect<T extends FieldValues>({ id, label, registe
             <Select
                 id={id as string}
                 label={label}
+                labelPlacement='outside'
                 variant='faded'
+                classNames={{
+                    label: 'font-roboto-condensed',
+                    value: 'font-quicksand font-medium',
+                    listbox: 'font-quicksand font-medium'
+                }}
+                size='lg'
                 isInvalid={!!errors[id]}
                 errorMessage={errors[id]?.message as string}
                 {...register(id as Path<T>)}

@@ -1,22 +1,19 @@
-import { Input } from '@nextui-org/react';
+import { Textarea } from '@nextui-org/react'
 import { FieldErrors, FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-interface CustomInputProps<T extends FieldValues> {
+interface CustomTextAreaProps<T extends FieldValues> {
     id: keyof T;
     label: string;
     register: UseFormRegister<T>;
     errors: FieldErrors<T>;
-    placeholder?: string;
 }
-
-export default function CustomInput<T extends FieldValues>({ id, label, register, errors, placeholder }: CustomInputProps<T>) {
+export default function CustomTextArea<T extends FieldValues>({ id, label, register, errors }: CustomTextAreaProps<T>) {
     return (
         <div>
-            <Input
+            <Textarea
                 id={id as string}
                 label={label}
                 labelPlacement='outside'
-                placeholder={placeholder}
                 classNames={{
                     label: 'font-roboto-condensed',
                     input: 'font-quicksand font-medium'
@@ -28,5 +25,5 @@ export default function CustomInput<T extends FieldValues>({ id, label, register
                 {...register(id as Path<T>)}
             />
         </div>
-    );
+    )
 }
