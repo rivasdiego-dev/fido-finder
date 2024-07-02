@@ -13,7 +13,7 @@ const User = (props: Props) => {
         <UserDetails />
         <div className="font-quicksand flex items-center w-full justify-center gap-3 font-bold text-xl text-b-base-text leading-none text-center">
           <p> Mascotas </p>
-          <Link to='new-pet' >
+          <Link to='add-pet' >
             <Button
               size='sm'
               isIconOnly
