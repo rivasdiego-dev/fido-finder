@@ -53,10 +53,12 @@ const EditUser = (props: Props) => {
             <div
               onClick={() => setIsLiveLocation(!isLiveLocation)}
               className={`flex ${
-                isLiveLocation ? 'justify-end' : 'justify-start'
-              } items-center h-6 bg-white rounded-full w-12 px-1 border-[#dbdade] border-2 cursor-pointer transition-all duration-300`}
+                isLiveLocation
+                  ? 'justify-end bg-green-400'
+                  : 'justify-start bg-white'
+              } items-center h-6 rounded-full w-12 border-[#dbdade] border-2 cursor-pointer`}
             >
-              <div className="bg-[#dbdade] h-5 w-5 rounded-full transform transition-transform duration-300"></div>
+              <div className="bg-[#dbdade] h-6 w-6 rounded-full transform transition-transform duration-300"></div>
             </div>
           </div>
           <p className="text-sm font-thin">
