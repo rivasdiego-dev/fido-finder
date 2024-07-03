@@ -5,6 +5,7 @@ type PetImageProps = {
   alt: string;
   petName: string;
   description?: string;
+  className?: string;
   bottomAction?: () => void;
   bottomActionLabel?: string;
 };
@@ -14,12 +15,13 @@ export default function PetImage({
   alt,
   petName,
   description,
+  className,
   bottomAction,
   bottomActionLabel,
 }: PetImageProps) {
   return (
     <div
-      className={`relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-lg`}
+      className={`relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-lg ${className}`}
     >
       <img src={src} alt={alt} className={`object-cover w-auto h-full`} />
       <div className="flex flex-col justify-end absolute bottom-0 w-full bg-gradient-to-t h-full from-black to-transparent via-transparent p-2">

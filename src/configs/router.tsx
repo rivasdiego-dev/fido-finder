@@ -12,6 +12,8 @@ import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
+import NewPostLoader from '../lib/loaders/NewPostLoader';
+import NewPost from '../views/pages/NewPost';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,7 +28,9 @@ export const router = createBrowserRouter(
           <Route index path="/" element={<Home />} />
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
-          <Route path="/new-post" element={<>Post a new lost pet </>} />
+          <Route path="/new-post" element={<NewPost />}
+            loader={NewPostLoader}
+          />
           <Route path="/profile" element={<User />} />
           <Route path="/profile/add-pet" element={<AddPet />}
             loader={AddPetLoader}
