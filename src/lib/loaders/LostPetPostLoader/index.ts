@@ -1,4 +1,5 @@
 import { LoaderFunction, ParamParseKey, Params } from "react-router-dom";
+import { getPostById } from "../../services/post.service";
 
 const Paths = {
     postDetail: "/post/:id",
@@ -10,6 +11,10 @@ type LostPetPostArgs = {
 
 export const LostPetPostLoader: LoaderFunction = async ({ params }: LostPetPostArgs) => {
     const { id } = params;
+    if (!id) return undefined;
 
-    return id;
+    const response = await getPostById(id);
+    if (response.isError) return undefined;
+
+    return response.response.data;
 };
