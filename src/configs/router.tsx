@@ -12,6 +12,8 @@ import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
+import LostPetPost from '../views/pages/LostPetPost';
+import { LostPetPostLoader } from '../lib/loaders/LostPetPostLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +32,9 @@ export const router = createBrowserRouter(
           <Route path="/profile" element={<User />} />
           <Route path="/profile/add-pet" element={<AddPet />}
             loader={AddPetLoader}
+          />
+          <Route path="/post/:id" element={<LostPetPost />}
+            loader={LostPetPostLoader}
           />
         </Route>
       </Route>
