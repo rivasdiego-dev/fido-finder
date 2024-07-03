@@ -9,7 +9,7 @@ type LostPetPostArgs = {
     params: Params<ParamParseKey<typeof Paths.postDetail>>;
 };
 
-export const LostPetPostLoader: LoaderFunction = async ({ params }: LostPetPostArgs) => {
+const LostPetPostLoader: LoaderFunction = async ({ params }: LostPetPostArgs) => {
     const { id } = params;
     if (!id) return undefined;
 
@@ -18,3 +18,5 @@ export const LostPetPostLoader: LoaderFunction = async ({ params }: LostPetPostA
 
     return response.response.data;
 };
+
+export default LostPetPostLoader;

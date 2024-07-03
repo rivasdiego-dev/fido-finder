@@ -5,17 +5,17 @@ import {
 } from 'react-router-dom';
 import AuthGuard from '../components/guards/AuthGuard';
 import AddPetLoader from '../lib/loaders/AddPetLoader';
+import LostPetPostLoader from '../lib/loaders/LostPetPostLoader';
+import NewPostLoader from '../lib/loaders/NewPostLoader';
 import AppLayout from '../views/layouts/AppLayout';
 import AuthLayout from '../views/layouts/AuthLayout';
 import AddPet from '../views/pages/AddPet';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
+import LostPetPost from '../views/pages/LostPetPost';
+import NewPost from '../views/pages/NewPost';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
-import NewPostLoader from '../lib/loaders/NewPostLoader';
-import NewPost from '../views/pages/NewPost';
-import LostPetPost from '../views/pages/LostPetPost';
-import { LostPetPostLoader } from '../lib/loaders/LostPetPostLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
