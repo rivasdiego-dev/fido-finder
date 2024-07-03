@@ -34,7 +34,9 @@ export const router = createBrowserRouter(
             loader={NewPostLoader}
           />
           <Route path="/profile" element={<User />} />
-          <Route path="/profile/add-pet" element={<AddPet />}
+          <Route
+            path="/profile/add-pet"
+            element={<AddPet />}
             loader={AddPetLoader}
           />
           <Route path="/post/:id" element={<LostPetPost />}
@@ -42,6 +44,7 @@ export const router = createBrowserRouter(
           />
         </Route>
       </Route>
+      {/* </Route> */}
     </Route>
   )
 );
