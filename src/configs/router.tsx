@@ -6,7 +6,6 @@ import {
 import AuthGuard from '../components/guards/AuthGuard';
 import AddPetLoader from '../lib/loaders/AddPetLoader';
 import LostPetPostLoader from '../lib/loaders/LostPetPostLoader';
-import NewPostLoader from '../lib/loaders/NewPostLoader';
 import AppLayout from '../views/layouts/AppLayout';
 import AuthLayout from '../views/layouts/AuthLayout';
 import AddPet from '../views/pages/AddPet';
@@ -30,9 +29,7 @@ export const router = createBrowserRouter(
           <Route index path="/" element={<Home />} />
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
-          <Route path="/new-post" element={<NewPost />}
-            loader={NewPostLoader}
-          />
+          <Route path="/new-post" element={<NewPost />} />
           <Route path="/profile" element={<User />} />
           <Route
             path="/profile/add-pet"
@@ -44,7 +41,6 @@ export const router = createBrowserRouter(
           />
         </Route>
       </Route>
-      {/* </Route> */}
     </Route>
   )
 );

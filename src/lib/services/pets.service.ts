@@ -1,17 +1,26 @@
 import { AxiosError } from "axios";
 import axiosInstance from ".";
 
-type NewPetBody = {
-    name: string,
-    color_id: number,
-    breed_id: number,
-    description: string,
-    file: File
+export async function CreatePet(formData: FormData): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.post("pets", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        return { response: res, isError: false };
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true };
+        return { response: error, isError: true };
+    }
 }
 
-export async function CreatePet(pet: NewPetBody): Promise<AxiosCustomResponse> {
+
+export async function getOwnedPets(): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.post("pets", pet)
+        const res = await axiosInstance.get("pets/own")
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
@@ -19,4 +28,5 @@ export async function CreatePet(pet: NewPetBody): Promise<AxiosCustomResponse> {
             return { response: error.response, isError: true }
         return { response: error, isError: true }
     }
+
 }

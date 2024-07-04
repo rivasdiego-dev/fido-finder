@@ -7,7 +7,7 @@ import AppBar from '../../../components/molecules/AppBar'
 export default function AppLayout() {
     return (
         <div className='flex flex-col min-h-dvh max-h-dvh bg-gradient-to-b from-10% from-[#222831] to-90% to-[#13161B] '>
-            <Toaster />
+            <Toaster richColors theme='dark' />
             <AppBar />
             <div className='flex flex-col flex-1 overflow-y-auto'>
                 <Outlet />

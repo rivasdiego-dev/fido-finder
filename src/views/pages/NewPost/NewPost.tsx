@@ -1,15 +1,21 @@
-import { useState } from "react"
-import { useLoaderData } from "react-router-dom"
-import PetSelector from "../../../components/molecules/PetSelector"
-import { Button } from "@nextui-org/react"
+import { Button, Skeleton } from "@nextui-org/react";
+import { useEffect, useState } from "react";
+import PetSelector from "../../../components/molecules/PetSelector";
+import { getOwnedPets } from "../../../lib/services/pets.service";
 
 export default function NewPost() {
+    const [ownedPets, setOwnedPets] = useState<ApiPet[]>([]);
+    const [loading, setLoading] = useState(true);
+    const petState = useState<ApiPet | null>(null);
+    const positionState = useState<GeolocationPosition | null>(null);
 
-    const ownedPets = useLoaderData() as ApiPet[]
-    const petState = useState<ApiPet | null>(null)
-
-    const positionState = useState<GeolocationPosition | null>(null)
-
+    useEffect(() => {
+        getOwnedPets().then((response) => {
+            if (!response.isError) {
+                setOwnedPets(response.response.data);
+            }
+        }).finally(() => setLoading(false));
+    }, []);
 
     return (
         <>
@@ -17,24 +23,34 @@ export default function NewPost() {
                 Crear publicación
             </h1>
 
-            <PetSelector state={petState} pets={ownedPets} />
+            <div className="p-4">
+                <Skeleton isLoaded={!loading} className="rounded-lg">
+                    <div className="h-[290px] w-full grid place-items-center">
+                        {!loading && <PetSelector state={petState} pets={ownedPets} />}
+                    </div>
+                </Skeleton>
+            </div>
 
-            <Button className="w-full mt-4" color="primary" onClick={
-                () => navigator.geolocation.getCurrentPosition(
+            <Button
+                className="w-full mt-4"
+                color="primary"
+                onClick={() => navigator.geolocation.getCurrentPosition(
                     (position) => positionState[1](position),
                     (error) => console.error(error)
-                )
-            }>
+                )}
+            >
                 Ubicación actual
             </Button>
 
-            <Button className="w-full mt-4" color="primary" onClick={() => {
-                console.log({ pet: petState[0], position: positionState[0] })
-            }}>
+            <Button
+                className="w-full mt-4"
+                color="primary"
+                onClick={() => {
+                    console.log({ pet: petState[0], position: positionState[0] });
+                }}
+            >
                 Continuar
             </Button>
-
-
         </>
-    )
+    );
 }
