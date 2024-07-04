@@ -19,11 +19,15 @@ export default function PetImage({
   bottomAction,
   bottomActionLabel,
 }: PetImageProps) {
+
+  const petImage = src ? src : '/img/pet-paw.jpg';
+
   return (
+
     <div
       className={`relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-lg ${className}`}
     >
-      <img src={src} alt={alt} className={`object-cover w-auto h-full`} />
+      <img src={petImage} alt={alt} className={`object-cover w-full h-full`} />
       <div className="flex flex-col justify-end absolute bottom-0 w-full bg-gradient-to-t h-full from-black to-transparent via-transparent p-2">
         <p className="font-quicksand font-bold text-3xl text-b-base-text">
           {petName}
