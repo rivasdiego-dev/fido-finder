@@ -36,3 +36,24 @@ export async function getAllPosts(): Promise<AxiosCustomResponse> {
         return { response: error, isError: true }
     }
 }
+
+type createPostBody = {
+    pet_id: string;
+    details: string;
+    lost_in: {
+        lat: number;
+        lon: number;
+    };
+}
+
+export async function createPost(data: createPostBody): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.post("posts", data)
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}

@@ -14,13 +14,11 @@ const AuthGuard = () => {
 
     useEffect(() => {
         const validateUser = async () => {
-            if (user) {
-                setIsLoading(false);
-                return;
-            }
 
-            if (!token) {
+            if (!token || !user) {
                 setIsLoading(false);
+                setUser(undefined);
+                setToken(undefined);
                 navigate('/login');
                 return;
             }
@@ -42,7 +40,8 @@ const AuthGuard = () => {
         };
 
         validateUser();
-    }, [user, token, setUser, setToken, navigate]);
+        // eslint-disable-next-line
+    }, []);
 
     if (isLoading) {
         return <Loader />;
