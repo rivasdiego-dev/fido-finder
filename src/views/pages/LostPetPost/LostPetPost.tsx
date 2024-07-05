@@ -1,10 +1,10 @@
-import { useLoaderData } from 'react-router-dom';
-import PetImage from '../../../components/atoms/PetImage';
+import { format, parse } from '@formkit/tempo';
 import { Button } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
-import { getPostSeenReports } from '../../../lib/services/post.service';
-import { parse, format } from '@formkit/tempo';
+import { Link, useLoaderData } from 'react-router-dom';
+import PetImage from '../../../components/atoms/PetImage';
 import MapComponent from '../../../components/molecules/MapComponent';
+import { getPostSeenReports } from '../../../lib/services/post.service';
 import extractCoordinates from '../../../lib/utils/extractCoordinates';
 
 export default function LostPetPost() {
@@ -74,9 +74,11 @@ export default function LostPetPost() {
                                 {format(parse(lastSeen), 'DD MMMM, YYYY - h:mm A', 'es')}
                             </p>
                         </div>
-                        <Button color='secondary' variant='bordered'>
-                            Detalles
-                        </Button>
+                        <Link to={`/post/${data.id}/seen-reports`}>
+                            <Button color='secondary' variant='bordered'>
+                                Detalles
+                            </Button>
+                        </Link>
                     </div>
                     <MapComponent
                         points={[

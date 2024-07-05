@@ -6,6 +6,7 @@ import {
 import AuthGuard from '../components/guards/AuthGuard';
 import AddPetLoader from '../lib/loaders/AddPetLoader';
 import LostPetPostLoader from '../lib/loaders/LostPetPostLoader';
+import SeenReportsLoader from '../lib/loaders/SeenReportsLoader';
 import AppLayout from '../views/layouts/AppLayout';
 import AuthLayout from '../views/layouts/AuthLayout';
 import AddPet from '../views/pages/AddPet';
@@ -13,6 +14,7 @@ import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import LostPetPost from '../views/pages/LostPetPost';
 import NewPost from '../views/pages/NewPost';
+import PetSeenReports from '../views/pages/PetSeenReports';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
 
@@ -38,6 +40,9 @@ export const router = createBrowserRouter(
           />
           <Route path="/post/:id" element={<LostPetPost />}
             loader={LostPetPostLoader}
+          />
+          <Route path="/post/:id/seen-reports" element={<PetSeenReports />}
+            loader={SeenReportsLoader}
           />
         </Route>
       </Route>

@@ -2,13 +2,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Skeleton } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
+import InteractiveMapElement from "../../../components/atoms/InteractiveMapElement";
 import CustomTextArea from "../../../components/molecules/CustomTextArea";
-import MapComponent from "../../../components/molecules/MapComponent";
 import PetSelector from "../../../components/molecules/PetSelector";
 import { getOwnedPets } from "../../../lib/services/pets.service";
-import { useNavigate } from "react-router-dom";
 import { createPost } from "../../../lib/services/post.service";
 
 
@@ -33,6 +33,10 @@ export default function NewPost() {
             }
         }).finally(() => setLoading(false));
     }, []);
+
+    const handlePointChange = (point: { lat: number; lng: number }) => {
+        setPosition(point);
+    };
 
     const onSubmit: SubmitHandler<z.infer<typeof NewPostSchema>> = async (data) => {
         if (posting) return;
@@ -92,9 +96,13 @@ export default function NewPost() {
 
             <div>
                 <h2 className="font-roboto-condensed mt-4">¿Dónde se perdió?</h2>
-                <MapComponent points={position} />
+                <InteractiveMapElement
+                    points={position}
+                    editable
+                    onPointChange={handlePointChange}
+                />
                 <p className="text-neutral-500 font-roboto font-semibold text-sm text-center">
-                    Latitud: {position.lat}  Longitud: {position.lng}
+                    Latitud: {position.lat} <br />  Longitud: {position.lng}
                 </p>
                 <Button
                     className="w-full mt-2"
