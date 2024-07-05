@@ -17,6 +17,7 @@ import NewPost from '../views/pages/NewPost';
 import PetSeenReports from '../views/pages/PetSeenReports';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
+import HomeLoader from '../lib/loaders/HomeLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,7 +29,7 @@ export const router = createBrowserRouter(
 
       <Route element={<AuthGuard />}>
         <Route element={<AppLayout />}>
-          <Route index path="/" element={<Home />} />
+          <Route index path="/" element={<Home />} loader={HomeLoader} />
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
           <Route path="/new-post" element={<NewPost />} />
@@ -38,10 +39,14 @@ export const router = createBrowserRouter(
             element={<AddPet />}
             loader={AddPetLoader}
           />
-          <Route path="/post/:id" element={<LostPetPost />}
+          <Route
+            path="/post/:id"
+            element={<LostPetPost />}
             loader={LostPetPostLoader}
           />
-          <Route path="/post/:id/seen-reports" element={<PetSeenReports />}
+          <Route
+            path="/post/:id/seen-reports"
+            element={<PetSeenReports />}
             loader={SeenReportsLoader}
           />
         </Route>

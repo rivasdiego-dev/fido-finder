@@ -8,10 +8,13 @@ type CardImageProps = {
   user: string;
   date: string;
   location: string;
+  petImg: string;
+  petName: string;
+  postId: string;
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { avatarUrl, user, date, location } = props;
+  const { avatarUrl, user, date, location, petImg, petName, postId } = props;
   return (
     <div className="w-full flex flex-col gap-1 font-roboto-condensed">
       {/* Label */}
@@ -28,28 +31,46 @@ const CardImage = (props: CardImageProps) => {
       </div>
       {/* Post */}
       <div className="flex flex-col justify-center items-center gap-4 w-full p-4 bg-b-base-foreground rounded-xl">
-        <PetImage src="img/lost-dog.jpg" alt="Lost Pet" petName="Fido" />
+        <PetImage src={petImg} alt="Lost Pet" petName={petName} />
         <div className="flex w-full justify-between">
           <div className="flex flex-col justify-center gap-1">
             <p className="text-base leading-none font-semibold">Se perdió en</p>
             <p className="text-base leading-none">{location}</p>
           </div>
-          <Link to='/post/id'> {/* TODO: Add the correct path */}
-            <Button radius='sm' className="flex flex-col h-16 px-0  bg-white/5 text-b-secondary-300">
+          <Link to={`/post/${postId}`}>
+            <Button
+              radius="sm"
+              className="flex flex-col h-16 px-0  bg-white/5 text-b-secondary-300"
+            >
               <IconMapPin size={32} />
-              <p className="text-base leading-none">
-                Ubicación
-              </p>
+              <p className="text-base leading-none">Ubicación</p>
             </Button>
           </Link>
         </div>
         <div className="flex justify-center gap-2 w-full">
-          <Button color="primary" fullWidth size='lg' radius='sm' variant="flat">
-            Ver publicación
-          </Button>
-          <Button color="primary" fullWidth size='lg' radius='sm' variant="solid">
-            Reportar
-          </Button>
+          <Link to={`/post/${postId}`}>
+            <Button
+              color="primary"
+              fullWidth
+              size="lg"
+              radius="sm"
+              variant="flat"
+            >
+              Ver publicación
+            </Button>
+          </Link>
+          {/* TODO: Redirect to report view */}
+          <Link to={`/post/postId/seen-reports`}>
+            <Button
+              color="primary"
+              fullWidth
+              size="lg"
+              radius="sm"
+              variant="solid"
+            >
+              Reportar
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
