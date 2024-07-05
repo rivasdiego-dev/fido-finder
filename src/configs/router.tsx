@@ -13,6 +13,7 @@ import AddPet from '../views/pages/AddPet';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import LostPetPost from '../views/pages/LostPetPost';
+import MyPosts from '../views/pages/MyPosts';
 import NewPost from '../views/pages/NewPost';
 import PetSeenReports from '../views/pages/PetSeenReports';
 import User from '../views/pages/User';
@@ -44,6 +45,7 @@ export const router = createBrowserRouter(
           <Route path="/post/:id/seen-reports" element={<PetSeenReports />}
             loader={SeenReportsLoader}
           />
+          <Route path="/post/own" element={<MyPosts />} />
         </Route>
       </Route>
     </Route>
