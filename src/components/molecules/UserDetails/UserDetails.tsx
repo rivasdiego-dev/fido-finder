@@ -7,7 +7,7 @@ const UserDetails = () => {
         <img
           src="img/lost-dog.jpg"
           alt="User"
-          className="h-[5rem] w-[5rem] rounded-full"
+          className="h-[5rem] w-[5rem] rounded-full object-cover"
         />
       </div>
       <div className="h-14"></div>
