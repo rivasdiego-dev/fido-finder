@@ -42,7 +42,7 @@ const CardImage = (props: CardImageProps) => {
               radius="sm"
               className="flex flex-col h-16 px-0  bg-white/5 text-b-secondary-300"
             >
-              <IconMapPin size={32} />
+              <IconMapPin size={28} />
               <p className="text-base leading-none">Ubicación</p>
             </Button>
           </Link>
