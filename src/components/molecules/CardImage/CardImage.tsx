@@ -11,10 +11,12 @@ type CardImageProps = {
   petImg: string;
   petName: string;
   postId: string;
+  petId: string;
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { avatarUrl, user, date, location, petImg, petName, postId } = props;
+  const { avatarUrl, user, date, location, petImg, petName, postId, petId } =
+    props;
   return (
     <div className="w-full flex flex-col gap-1 font-roboto-condensed">
       {/* Label */}
@@ -31,7 +33,9 @@ const CardImage = (props: CardImageProps) => {
       </div>
       {/* Post */}
       <div className="flex flex-col justify-center items-center gap-4 w-full p-4 bg-b-base-foreground rounded-xl">
-        <PetImage src={petImg} alt="Lost Pet" petName={petName} />
+        <Link to={`/pet/${petId}`}>
+          <PetImage src={petImg} alt="Lost Pet" petName={petName} />
+        </Link>
         <div className="flex w-full justify-between">
           <div className="flex flex-col justify-center gap-1">
             <p className="text-base leading-none font-semibold">Se perdió en</p>

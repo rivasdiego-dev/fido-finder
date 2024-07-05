@@ -13,11 +13,15 @@ import AddPet from '../views/pages/AddPet';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import LostPetPost from '../views/pages/LostPetPost';
+import MyPosts from '../views/pages/MyPosts';
 import NewPost from '../views/pages/NewPost';
 import PetSeenReports from '../views/pages/PetSeenReports';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
-import HomeLoader from '../lib/loaders/HomeLoader';
+import Stats from '../views/pages/Stats';
+import StatsLoader from '../lib/loaders/StatsLoader';
+import PetLoader from '../lib/loaders/PetLoader';
+import Pet from '../views/pages/Pet';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,10 +33,12 @@ export const router = createBrowserRouter(
 
       <Route element={<AuthGuard />}>
         <Route element={<AppLayout />}>
-          <Route index path="/" element={<Home />} loader={HomeLoader} />
+          <Route index path="/" element={<Home />} />
+          <Route path="/stats" element={<Stats />} loader={StatsLoader} />
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
           <Route path="/new-post" element={<NewPost />} />
+          <Route path="/pet/:id" element={<Pet />} loader={PetLoader} />
           <Route path="/profile" element={<User />} />
           <Route
             path="/profile/add-pet"
@@ -49,6 +55,7 @@ export const router = createBrowserRouter(
             element={<PetSeenReports />}
             loader={SeenReportsLoader}
           />
+          <Route path="/post/own" element={<MyPosts />} />
         </Route>
       </Route>
     </Route>

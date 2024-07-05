@@ -32,6 +32,7 @@ const Home = () => {
                 petImg={pets.img}
                 petName={pets.name}
                 postId={id}
+                petId={pets.id}
               />
             );
           })}

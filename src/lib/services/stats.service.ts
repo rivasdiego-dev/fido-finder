@@ -1,9 +1,10 @@
 import { AxiosError } from "axios";
 import axiosInstance from ".";
 
-export async function getPostById(id: string): Promise<AxiosCustomResponse> {
+// Chart
+export async function getLostPetAmountsByDepartments(): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.get("posts/" + id)
+        const res = await axiosInstance.get("stats/lost-pets/departments")
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
@@ -13,9 +14,10 @@ export async function getPostById(id: string): Promise<AxiosCustomResponse> {
     }
 }
 
-export async function getMyPosts(): Promise<AxiosCustomResponse> {
+// Map
+export async function getLostPetsByOneDepartment(departmentId: number): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.get("posts/own")
+        const res = await axiosInstance.get(`stats/lost-pets/departments/${departmentId}`)
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
@@ -25,9 +27,10 @@ export async function getMyPosts(): Promise<AxiosCustomResponse> {
     }
 }
 
-export async function getPostSeenReports(id: string): Promise<AxiosCustomResponse> {
+// Chart
+export async function getLostPetAmountsByMunicipalities(): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.get("posts/" + id + "/seen-reports")
+        const res = await axiosInstance.get("stats/lost-pets/municipalities")
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
@@ -37,9 +40,10 @@ export async function getPostSeenReports(id: string): Promise<AxiosCustomRespons
     }
 }
 
-export async function getAllPosts(): Promise<AxiosCustomResponse> {
+// Map
+export async function getLostPetsByOneMunicipality(municipalityId: number): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.get("posts")
+        const res = await axiosInstance.get(`stats/lost-pets/municipalities/${municipalityId}`)
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
@@ -49,18 +53,10 @@ export async function getAllPosts(): Promise<AxiosCustomResponse> {
     }
 }
 
-type createPostBody = {
-    pet_id: string;
-    details: string;
-    lost_in: {
-        lat: number;
-        lon: number;
-    };
-}
-
-export async function createPost(data: createPostBody): Promise<AxiosCustomResponse> {
+// Chart
+export async function getLostPetAmountsByCommunities(): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.post("posts", data)
+        const res = await axiosInstance.get("stats/lost-pets/communities")
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);

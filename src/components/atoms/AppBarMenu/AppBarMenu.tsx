@@ -1,6 +1,7 @@
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/dropdown";
-import { IconLogout, IconMenu2 } from "@tabler/icons-react";
+import { IconChartBar, IconLogout, IconMenu2 } from "@tabler/icons-react";
 import { useUserStore } from "../../../lib/store/user";
+import { Link } from "react-router-dom";
 
 export default function AppBarMenu() {
 
@@ -14,6 +15,14 @@ export default function AppBarMenu() {
                 <IconMenu2 size={28} />
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
+                <DropdownItem key="stats">
+                    <Link to="/stats">
+                        <div className="flex gap-2 items-center align-middle">
+                            <IconChartBar />
+                            <p>Estadísticas</p>
+                        </div>
+                    </Link>
+                </DropdownItem>
                 <DropdownItem key="logout" onClick={handleLogout}>
                     <div className="flex gap-2 items-center align-middle">
                         <IconLogout />
