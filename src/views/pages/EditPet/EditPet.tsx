@@ -1,9 +1,6 @@
-import React from 'react';
 import { Button, Input } from '@nextui-org/react';
 
-type Props = {};
-
-const EditPet = (props: Props) => {
+const EditPet = () => {
   return (
     <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
       <img

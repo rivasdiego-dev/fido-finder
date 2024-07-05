@@ -1,9 +1,6 @@
-import React from 'react';
 import PetImage from '../../../components/atoms/PetImage';
 
-type Props = {};
-
-const Pet = (props: Props) => {
+const Pet = () => {
   return (
     <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
       <PetImage

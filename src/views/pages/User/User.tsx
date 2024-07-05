@@ -4,9 +4,7 @@ import { IconPlus } from '@tabler/icons-react';
 import { Button } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
 
-type Props = {};
-
-const User = (props: Props) => {
+const User = () => {
   return (
     <main>
       <div className="px-5 flex flex-col gap-4 overflow-y-scroll">

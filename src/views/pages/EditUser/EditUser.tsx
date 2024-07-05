@@ -1,9 +1,7 @@
 import { Button, DatePicker, Input } from '@nextui-org/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-type Props = {};
-
-const EditUser = (props: Props) => {
+const EditUser = () => {
   const [isLiveLocation, setIsLiveLocation] = useState<boolean>(false);
 
   return (
@@ -52,11 +50,10 @@ const EditUser = (props: Props) => {
             <p>Ubicación en Tiempo Real</p>
             <div
               onClick={() => setIsLiveLocation(!isLiveLocation)}
-              className={`flex ${
-                isLiveLocation
+              className={`flex ${isLiveLocation
                   ? 'justify-end bg-green-400'
                   : 'justify-start bg-white'
-              } items-center h-6 rounded-full w-12 border-[#dbdade] border-2 cursor-pointer`}
+                } items-center h-6 rounded-full w-12 border-[#dbdade] border-2 cursor-pointer`}
             >
               <div className="bg-[#dbdade] h-6 w-6 rounded-full transform transition-transform duration-300"></div>
             </div>

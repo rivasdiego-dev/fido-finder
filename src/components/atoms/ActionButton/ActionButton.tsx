@@ -1,8 +1,6 @@
-import React from 'react';
-
 type ButtonProps = {
   type: 'primary' | 'secondary';
-  text: String;
+  text: string;
 };
 
 const ActionButton = (props: ButtonProps) => {

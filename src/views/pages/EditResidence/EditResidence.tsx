@@ -1,9 +1,6 @@
 import { Button, Input } from '@nextui-org/react';
-import React from 'react';
 
-type Props = {};
-
-const EditResidence = (props: Props) => {
+const EditResidence = () => {
   return (
     <div className="px-5 flex flex-col justify-center gap-4 font-roboto-condensed">
       <p className="text-2xl text-center">Lugar de Residencia</p>

@@ -1,7 +1,7 @@
-import React from 'react';
-import ActionButton from '../../atoms/ActionButton';
-import PetImage from '../../atoms/PetImage';
 import { Button } from '@nextui-org/react';
+import PetImage from '../../atoms/PetImage';
+import { IconMapPin } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 
 type CardImageProps = {
   avatarUrl: string;
@@ -34,22 +34,20 @@ const CardImage = (props: CardImageProps) => {
             <p className="text-base leading-none font-semibold">Se perdió en</p>
             <p className="text-base leading-none">{location}</p>
           </div>
-          <button className="flex flex-col justify-center items-center rounded-xl gap-1 w-16 h-16 bg-[#3c4049]">
-            <img
-              src="img/Map Pin.png"
-              alt="Ubicacion"
-              className="w-7 h-7 object-contain"
-            />
-            <p className="text-sm font-light leading-none text-b-secondary-300">
-              Ubicación
-            </p>
-          </button>
+          <Link to='/post/id'> {/* TODO: Add the correct path */}
+            <Button radius='sm' className="flex flex-col h-16 px-0  bg-white/5 text-b-secondary-300">
+              <IconMapPin size={32} />
+              <p className="text-base leading-none">
+                Ubicación
+              </p>
+            </Button>
+          </Link>
         </div>
         <div className="flex justify-center gap-2 w-full">
-          <Button color="primary" variant="flat">
+          <Button color="primary" fullWidth size='lg' radius='sm' variant="flat">
             Ver publicación
           </Button>
-          <Button color="primary" variant="solid">
+          <Button color="primary" fullWidth size='lg' radius='sm' variant="solid">
             Reportar
           </Button>
         </div>

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CardImage from '../../../components/molecules/CardImage';
 import NotRegistered from '../../../components/molecules/NotRegistered';
 
 const Home = () => {
-  const [isRegistered, setIsRegistered] = useState<boolean>(true);
+  const [isRegistered,] = useState<boolean>(true);
 
   return (
     <main className="relative">
