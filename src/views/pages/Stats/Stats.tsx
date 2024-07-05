@@ -3,14 +3,25 @@ import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAx
 
 export default function Stats() {
 
-    const loaderdata = useLoaderData();
+    const loaderdata = useLoaderData() as {
+        departments: {
+            department: string;
+            lost_pets_count: number;
+        }[],
+        municipalities: {
+            municipality: string;
+            lost_pets_count: number;
+        }[],
+        communities: {
+            colonia: string;
+            lost_pets_count: number
+        }[]
+    };
 
     console.log(loaderdata);
 
     return (
         <div className='flex-1'>
-
-            
 
             <div className='h-96 p-4'>
                 <ResponsiveContainer width="100%" height="100%">
