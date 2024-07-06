@@ -1,1050 +1,1086 @@
 [
     {
         "nom_mun": "NUEVA CONCEPCION",
-        "cod_mun": "16"
+        "id": "01"
     },
     {
         "nom_mun": "AGUA CALIENTE",
-        "cod_mun": "01"
+        "id": "02"
     },
     {
         "nom_mun": "LA PALMA",
-        "cod_mun": "12"
+        "id": "03"
     },
     {
         "nom_mun": "SAN IGNACIO",
-        "cod_mun": "25"
+        "id": "04"
     },
     {
         "nom_mun": "CITALA",
-        "cod_mun": "04"
+        "id": "05"
     },
     {
         "nom_mun": "SAN FERNANDO",
-        "cod_mun": "22"
+        "id": "06"
     },
     {
         "nom_mun": "LA REINA",
-        "cod_mun": "13"
+        "id": "07"
     },
     {
         "nom_mun": "SAN FRANCISCO MORAZAN",
-        "cod_mun": "24"
+        "id": "08"
     },
     {
         "nom_mun": "TEJUTLA",
-        "cod_mun": "33"
+        "id": "09"
     },
     {
         "nom_mun": "DULCE NOMBRE DE MARIA",
-        "cod_mun": "08"
+        "id": "10"
     },
     {
         "nom_mun": "EL PARAISO",
-        "cod_mun": "10"
+        "id": "11"
     },
     {
         "nom_mun": "SAN RAFAEL",
-        "cod_mun": "31"
+        "id": "12"
     },
     {
         "nom_mun": "SANTA RITA",
-        "cod_mun": "32"
+        "id": "13"
     },
     {
         "nom_mun": "SAN ISIDRO LABRADOR",
-        "cod_mun": "26"
+        "id": "19"
     },
     {
         "nom_mun": "SAN ANTONIO LOS RANCHOS",
-        "cod_mun": "21"
+        "id": "23"
     },
     {
         "nom_mun": "AZACUALPA",
-        "cod_mun": "03"
+        "id": "24"
     },
     {
         "nom_mun": "CONCEPCION QUEZALTEPEQUE",
-        "cod_mun": "06"
+        "id": "14"
     },
     {
         "nom_mun": "CHALATENANGO",
-        "cod_mun": "07"
+        "id": "15"
     },
     {
         "nom_mun": "NUEVA TRINIDAD",
-        "cod_mun": "17"
+        "id": "16"
     },
     {
         "nom_mun": "LAS VUELTAS",
-        "cod_mun": "14"
+        "id": "17"
     },
     {
         "nom_mun": "OJOS DE AGUA",
-        "cod_mun": "18"
+        "id": "18"
     },
     {
         "nom_mun": "CANCASQUE",
-        "cod_mun": "27"
+        "id": "20"
     },
     {
         "nom_mun": "POTONICO",
-        "cod_mun": "19"
+        "id": "21"
     },
     {
         "nom_mun": "SAN MIGUEL DE MERCEDES",
-        "cod_mun": "30"
+        "id": "22"
     },
     {
         "nom_mun": "SAN LUIS DEL CARMEN",
-        "cod_mun": "29"
+        "id": "25"
     },
     {
         "nom_mun": "METAPAN",
-        "cod_mun": "07"
+        "id": "26"
     },
     {
         "nom_mun": "GUADALUPE",
-        "cod_mun": "02"
+        "id": "46"
     },
     {
         "nom_mun": "TECOLUCA",
-        "cod_mun": "11"
+        "id": "47"
     },
     {
         "nom_mun": "SAN ILDEFONSO",
-        "cod_mun": "07"
+        "id": "48"
     },
     {
         "nom_mun": "SAN ANTONIO PAJONAL",
-        "cod_mun": "08"
+        "id": "27"
     },
     {
         "nom_mun": "SANTIAGO DE LA FRONTERA",
-        "cod_mun": "12"
+        "id": "28"
     },
     {
         "nom_mun": "JUCUAPA",
-        "cod_mun": "09"
+        "id": "56"
     },
     {
         "nom_mun": "SANTA ROSA GUACHIPILIN",
-        "cod_mun": "11"
+        "id": "29"
     },
     {
         "nom_mun": "MASAHUAT",
-        "cod_mun": "06"
+        "id": "30"
     },
     {
         "nom_mun": "TEXISTEPEQUE",
-        "cod_mun": "13"
+        "id": "31"
     },
     {
         "nom_mun": "CANDELARIA DE LA FRONTERA",
-        "cod_mun": "01"
+        "id": "32"
     },
     {
         "nom_mun": "SANTA ANA",
-        "cod_mun": "10"
+        "id": "33"
     },
     {
         "nom_mun": "COATEPEQUE",
-        "cod_mun": "02"
+        "id": "34"
     },
     {
         "nom_mun": "EL PORVENIR",
-        "cod_mun": "05"
+        "id": "35"
     },
     {
         "nom_mun": "SAN CRISTOBAL",
-        "cod_mun": "08"
+        "id": "78"
     },
     {
         "nom_mun": "SAN SEBASTIAN SALITRILLO",
-        "cod_mun": "09"
+        "id": "36"
     },
     {
         "nom_mun": "CHALCHUAPA",
-        "cod_mun": "03"
+        "id": "37"
     },
     {
         "nom_mun": "EL CONGO",
-        "cod_mun": "04"
+        "id": "38"
     },
     {
         "nom_mun": "APASTEPEQUE",
-        "cod_mun": "01"
+        "id": "39"
     },
     {
         "nom_mun": "SAN SEBASTIAN",
-        "cod_mun": "09"
+        "id": "40"
     },
     {
         "nom_mun": "SAN ANTONIO MASAHUAT",
-        "cod_mun": "07"
+        "id": "86"
     },
     {
         "nom_mun": "TAPALHUACA",
-        "cod_mun": "20"
+        "id": "87"
     },
     {
         "nom_mun": "CUYULTITAN",
-        "cod_mun": "01"
+        "id": "88"
     },
     {
         "nom_mun": "VERAPAZ",
-        "cod_mun": "13"
+        "id": "41"
     },
     {
         "nom_mun": "SANTO DOMINGO",
-        "cod_mun": "05"
+        "id": "42"
     },
     {
         "nom_mun": "SAN LORENZO",
-        "cod_mun": "08"
+        "id": "43"
     },
     {
         "nom_mun": "SAN FRANCISCO CHINAMECA",
-        "cod_mun": "09"
+        "id": "89"
     },
     {
         "nom_mun": "SAN JUAN TEPEZONTES",
-        "cod_mun": "12"
+        "id": "90"
     },
     {
         "nom_mun": "SANTIAGO NONUALCO",
-        "cod_mun": "19"
+        "id": "91"
     },
     {
         "nom_mun": "SAN PEDRO MASAHUAT",
-        "cod_mun": "15"
+        "id": "92"
     },
     {
         "nom_mun": "SAN JUAN NONUALCO",
-        "cod_mun": "10"
+        "id": "93"
     },
     {
         "nom_mun": "ZACATECOLUCA",
-        "cod_mun": "21"
+        "id": "94"
     },
     {
         "nom_mun": "SAN RAFAEL OBRAJUELO",
-        "cod_mun": "17"
+        "id": "95"
     },
     {
         "nom_mun": "SAN LUIS LA HERRADURA",
-        "cod_mun": "22"
+        "id": "96"
     },
     {
         "nom_mun": "SAN PEDRO NONUALCO",
-        "cod_mun": "16"
+        "id": "97"
     },
     {
         "nom_mun": "SANTA MARIA OSTUMA",
-        "cod_mun": "18"
+        "id": "98"
     },
     {
         "nom_mun": "TEPETITAN",
-        "cod_mun": "12"
+        "id": "44"
     },
     {
         "nom_mun": "SAN CAYETANO ISTEPEQUE",
-        "cod_mun": "03"
+        "id": "45"
     },
     {
         "nom_mun": "PARAISO DE OSORIO",
-        "cod_mun": "06"
+        "id": "99"
     },
     {
         "nom_mun": "ESTANZUELAS",
-        "cod_mun": "07"
+        "id": "49"
     },
     {
         "nom_mun": "SAN AGUSTIN",
-        "cod_mun": "15"
+        "id": "50"
     },
     {
         "nom_mun": "BERLIN",
-        "cod_mun": "02"
+        "id": "51"
     },
     {
         "nom_mun": "NUEVA GRANADA",
-        "cod_mun": "12"
+        "id": "52"
     },
     {
         "nom_mun": "EL TRIUNFO",
-        "cod_mun": "05"
+        "id": "53"
     },
     {
         "nom_mun": "SAN BUENA VENTURA",
-        "cod_mun": "16"
+        "id": "54"
     },
     {
         "nom_mun": "SANTIAGO DE MARIA",
-        "cod_mun": "21"
+        "id": "55"
     },
     {
         "nom_mun": "ALEGRIA",
-        "cod_mun": "01"
+        "id": "57"
     },
     {
         "nom_mun": "SAN FRANCISCO LEMPA",
-        "cod_mun": "23"
+        "id": "58"
     },
     {
         "nom_mun": "SAN ANTONIO DE LA CRUZ",
-        "cod_mun": "20"
+        "id": "59"
     },
     {
         "nom_mun": "NOMBRE DE JESUS",
-        "cod_mun": "15"
+        "id": "60"
     },
     {
         "nom_mun": "LAS FLORES",
-        "cod_mun": "28"
+        "id": "61"
     },
     {
         "nom_mun": "ARCATAO",
-        "cod_mun": "02"
+        "id": "62"
     },
     {
         "nom_mun": "COMALAPA",
-        "cod_mun": "05"
+        "id": "63"
     },
     {
         "nom_mun": "LA LAGUNA",
-        "cod_mun": "11"
+        "id": "64"
     },
     {
         "nom_mun": "EL CARRIZAL",
-        "cod_mun": "09"
+        "id": "65"
     },
     {
         "nom_mun": "SUCHITOTO",
-        "cod_mun": "15"
+        "id": "66"
     },
     {
         "nom_mun": "TENANCINGO",
-        "cod_mun": "16"
+        "id": "67"
     },
     {
         "nom_mun": "SAN JOSE GUAYABAL",
-        "cod_mun": "09"
+        "id": "68"
     },
     {
         "nom_mun": "ORATORIO DE CONCEPCION",
-        "cod_mun": "06"
+        "id": "69"
     },
     {
         "nom_mun": "LOLOTIQUILLO",
-        "cod_mun": "13"
+        "id": "115"
     },
     {
         "nom_mun": "SAN BARTOLOME PERULAPIA",
-        "cod_mun": "07"
+        "id": "70"
     },
     {
         "nom_mun": "SAN PEDRO PERULAPAN",
-        "cod_mun": "10"
+        "id": "71"
     },
     {
         "nom_mun": "SANTA CRUZ MICHAPA",
-        "cod_mun": "14"
+        "id": "72"
     },
     {
         "nom_mun": "MONTE SAN JUAN",
-        "cod_mun": "05"
+        "id": "73"
     },
     {
         "nom_mun": "EL ROSARIO",
-        "cod_mun": "04"
+        "id": "74"
     },
     {
         "nom_mun": "SAN RAFAEL CEDROS",
-        "cod_mun": "11"
+        "id": "75"
     },
     {
         "nom_mun": "COJUTEPEQUE",
-        "cod_mun": "02"
+        "id": "76"
     },
     {
         "nom_mun": "EL CARMEN",
-        "cod_mun": "03"
+        "id": "77"
     },
     {
         "nom_mun": "CANDELARIA",
-        "cod_mun": "01"
+        "id": "79"
     },
     {
         "nom_mun": "SAN RAMON",
-        "cod_mun": "12"
+        "id": "80"
     },
     {
         "nom_mun": "SANTA CRUZ ANALQUITO",
-        "cod_mun": "13"
+        "id": "81"
     },
     {
         "nom_mun": "SAN LUIS TALPA",
-        "cod_mun": "13"
+        "id": "82"
     },
     {
         "nom_mun": "OLOCUILTA",
-        "cod_mun": "05"
+        "id": "83"
     },
     {
         "nom_mun": "SAN JUAN TALPA",
-        "cod_mun": "11"
+        "id": "84"
     },
     {
         "nom_mun": "EL ROSARIO",
-        "cod_mun": "02"
+        "id": "85"
     },
     {
         "nom_mun": "SAN EMIGDIO",
-        "cod_mun": "08"
+        "id": "100"
     },
     {
         "nom_mun": "SAN MIGUEL TEPEZONTES",
-        "cod_mun": "14"
+        "id": "101"
     },
     {
         "nom_mun": "JERUSALEN",
-        "cod_mun": "03"
+        "id": "102"
     },
     {
         "nom_mun": "MERCEDES LA CEIBA",
-        "cod_mun": "04"
+        "id": "103"
     },
     {
         "nom_mun": "ILOBASCO",
-        "cod_mun": "03"
+        "id": "104"
     },
     {
         "nom_mun": "SAN ISIDRO",
-        "cod_mun": "05"
+        "id": "105"
     },
     {
         "nom_mun": "JUTIAPA",
-        "cod_mun": "04"
+        "id": "106"
     },
     {
         "nom_mun": "TEJUTEPEQUE",
-        "cod_mun": "07"
+        "id": "107"
     },
     {
         "nom_mun": "CINQUERA",
-        "cod_mun": "01"
+        "id": "108"
     },
     {
         "nom_mun": "SENSUNTEPEQUE",
-        "cod_mun": "06"
+        "id": "109"
     },
     {
         "nom_mun": "VICTORIA",
-        "cod_mun": "08"
+        "id": "110"
     },
     {
         "nom_mun": "GUACOTECTI",
-        "cod_mun": "02"
+        "id": "111"
     },
     {
         "nom_mun": "SANTA CLARA",
-        "cod_mun": "04"
+        "id": "112"
     },
     {
         "nom_mun": "SAN ESTEBAN CATARINA",
-        "cod_mun": "06"
+        "id": "113"
     },
     {
         "nom_mun": "SAN VICENTE",
-        "cod_mun": "10"
+        "id": "114"
     },
     {
         "nom_mun": "CHILANGA",
-        "cod_mun": "04"
+        "id": "116"
     },
     {
         "nom_mun": "GUATAJIAGUA",
-        "cod_mun": "09"
+        "id": "117"
     },
     {
         "nom_mun": "SAN FRANCISCO GOTERA",
-        "cod_mun": "19"
+        "id": "118"
     },
     {
         "nom_mun": "SENSEMBRA",
-        "cod_mun": "22"
+        "id": "119"
     },
     {
         "nom_mun": "YAMABAL",
-        "cod_mun": "25"
+        "id": "120"
     },
     {
         "nom_mun": "SAN CARLOS",
-        "cod_mun": "17"
+        "id": "121"
     },
     {
         "nom_mun": "SANTA ELENA",
-        "cod_mun": "18"
+        "id": "144"
     },
     {
         "nom_mun": "EL DIVISADERO",
-        "cod_mun": "06"
+        "id": "122"
     },
     {
         "nom_mun": "JOCORO",
-        "cod_mun": "12"
+        "id": "123"
     },
     {
         "nom_mun": "CORINTO",
-        "cod_mun": "03"
+        "id": "124"
     },
     {
         "nom_mun": "SAN ALEJO",
-        "cod_mun": "14"
+        "id": "125"
     },
     {
         "nom_mun": "PASAQUINA",
-        "cod_mun": "12"
+        "id": "126"
     },
     {
         "nom_mun": "SAN FRANCISCO JAVIER",
-        "cod_mun": "19"
+        "id": "145"
     },
     {
         "nom_mun": "TECAPAN",
-        "cod_mun": "22"
+        "id": "146"
     },
     {
         "nom_mun": "SANTA ROSA DE LIMA",
-        "cod_mun": "16"
+        "id": "127"
     },
     {
         "nom_mun": "EL SAUCE",
-        "cod_mun": "06"
+        "id": "128"
     },
     {
         "nom_mun": "CALIFORNIA",
-        "cod_mun": "03"
+        "id": "147"
     },
     {
         "nom_mun": "ANAMOROS",
-        "cod_mun": "01"
+        "id": "129"
     },
     {
         "nom_mun": "CONCHAGUA",
-        "cod_mun": "04"
+        "id": "130"
     },
     {
         "nom_mun": "INTIPUCA",
-        "cod_mun": "07"
+        "id": "131"
     },
     {
         "nom_mun": "NUEVA ESPARTA",
-        "cod_mun": "11"
+        "id": "132"
     },
     {
         "nom_mun": "LISLIQUE",
-        "cod_mun": "09"
+        "id": "133"
     },
     {
         "nom_mun": "POLOROS",
-        "cod_mun": "13"
+        "id": "134"
     },
     {
         "nom_mun": "CONCEPCION DE ORIENTE",
-        "cod_mun": "03"
+        "id": "135"
     },
     {
         "nom_mun": "SAN DIONISIO",
-        "cod_mun": "17"
+        "id": "153"
     },
     {
         "nom_mun": "YUCUAIQUIN",
-        "cod_mun": "18"
+        "id": "136"
     },
     {
         "nom_mun": "BOLIVAR",
-        "cod_mun": "02"
+        "id": "137"
     },
     {
         "nom_mun": "SAN JOSE",
-        "cod_mun": "15"
+        "id": "138"
     },
     {
         "nom_mun": "PUERTO EL TRIUNFO",
-        "cod_mun": "14"
+        "id": "154"
     },
     {
         "nom_mun": "JUCUARAN",
-        "cod_mun": "10"
+        "id": "155"
     },
     {
         "nom_mun": "SESORI",
-        "cod_mun": "19"
+        "id": "156"
     },
     {
         "nom_mun": "YAYANTIQUE",
-        "cod_mun": "17"
+        "id": "139"
     },
     {
         "nom_mun": "QUELEPA",
-        "cod_mun": "12"
+        "id": "170"
     },
     {
         "nom_mun": "SAN MIGUEL",
-        "cod_mun": "17"
+        "id": "171"
     },
     {
         "nom_mun": "EL CARMEN",
-        "cod_mun": "05"
+        "id": "140"
     },
     {
         "nom_mun": "LA UNION",
-        "cod_mun": "08"
+        "id": "141"
     },
     {
         "nom_mun": "MEANGUERA DEL GOLFO",
-        "cod_mun": "10"
+        "id": "142"
     },
     {
         "nom_mun": "JIQUILISCO",
-        "cod_mun": "08"
+        "id": "143"
     },
     {
         "nom_mun": "OZATLAN",
-        "cod_mun": "13"
+        "id": "148"
     },
     {
         "nom_mun": "SANTA MARIA",
-        "cod_mun": "20"
+        "id": "149"
     },
     {
         "nom_mun": "SAN RAFAEL ORIENTE",
-        "cod_mun": "18"
+        "id": "172"
     },
     {
         "nom_mun": "EL TRANSITO",
-        "cod_mun": "07"
+        "id": "173"
     },
     {
         "nom_mun": "CHIRILAGUA",
-        "cod_mun": "06"
+        "id": "174"
     },
     {
         "nom_mun": "EREGUAYQUIN",
-        "cod_mun": "06"
+        "id": "150"
     },
     {
         "nom_mun": "USULUTAN",
-        "cod_mun": "23"
+        "id": "151"
     },
     {
         "nom_mun": "CONCEPCION BATRES",
-        "cod_mun": "04"
+        "id": "152"
     },
     {
         "nom_mun": "NUEVO EDEN DE SAN JUAN",
-        "cod_mun": "11"
+        "id": "157"
     },
     {
         "nom_mun": "DOLORES",
-        "cod_mun": "09"
+        "id": "158"
     },
     {
         "nom_mun": "SAN GERARDO",
-        "cod_mun": "14"
+        "id": "159"
     },
     {
         "nom_mun": "ULUAZAPA",
-        "cod_mun": "20"
+        "id": "175"
     },
     {
         "nom_mun": "SAN LUIS DE LA REINA",
-        "cod_mun": "16"
+        "id": "160"
     },
     {
         "nom_mun": "CAROLINA",
-        "cod_mun": "01"
+        "id": "161"
     },
     {
         "nom_mun": "SAN ANTONIO",
-        "cod_mun": "13"
+        "id": "162"
     },
     {
         "nom_mun": "CIUDAD BARRIOS",
-        "cod_mun": "02"
+        "id": "163"
     },
     {
         "nom_mun": "CHAPELTIQUE",
-        "cod_mun": "04"
+        "id": "164"
     },
     {
         "nom_mun": "LOLOTIQUE",
-        "cod_mun": "08"
+        "id": "165"
     },
     {
         "nom_mun": "MONCAGUA",
-        "cod_mun": "09"
+        "id": "166"
     },
     {
         "nom_mun": "NUEVA GUADALUPE",
-        "cod_mun": "10"
+        "id": "167"
     },
     {
         "nom_mun": "CHINAMECA",
-        "cod_mun": "05"
+        "id": "168"
     },
     {
         "nom_mun": "SAN JORGE",
-        "cod_mun": "15"
+        "id": "169"
     },
     {
         "nom_mun": "COMACARAN",
-        "cod_mun": "03"
+        "id": "176"
     },
     {
         "nom_mun": "SOCIEDAD",
-        "cod_mun": "23"
+        "id": "177"
     },
     {
         "nom_mun": "CACAOPERA",
-        "cod_mun": "02"
+        "id": "178"
     },
     {
         "nom_mun": "SAN FERNANDO",
-        "cod_mun": "18"
+        "id": "179"
     },
     {
         "nom_mun": "ARAMBALA",
-        "cod_mun": "01"
+        "id": "180"
     },
     {
         "nom_mun": "SAN ISIDRO",
-        "cod_mun": "20"
+        "id": "184"
     },
     {
         "nom_mun": "PERQUIN",
-        "cod_mun": "16"
+        "id": "181"
     },
     {
         "nom_mun": "SAN ANTONIO DEL MONTE",
-        "cod_mun": "11"
+        "id": "199"
     },
     {
         "nom_mun": "SONSONATE",
-        "cod_mun": "15"
+        "id": "200"
     },
     {
         "nom_mun": "SAN JULIAN",
-        "cod_mun": "12"
+        "id": "201"
     },
     {
         "nom_mun": "ARMENIA",
-        "cod_mun": "02"
+        "id": "202"
     },
     {
         "nom_mun": "IZALCO",
-        "cod_mun": "06"
+        "id": "203"
     },
     {
         "nom_mun": "SANTA CATARINA MASAHUAT",
-        "cod_mun": "13"
+        "id": "204"
     },
     {
         "nom_mun": "SALCOATITAN",
-        "cod_mun": "10"
+        "id": "205"
     },
     {
         "nom_mun": "NAHUIZALCO",
-        "cod_mun": "08"
+        "id": "206"
     },
     {
         "nom_mun": "JUAYUA",
-        "cod_mun": "07"
+        "id": "207"
     },
     {
         "nom_mun": "SONZACATE",
-        "cod_mun": "16"
+        "id": "208"
     },
     {
         "nom_mun": "ROSARIO DE MORA",
-        "cod_mun": "11"
+        "id": "209"
     },
     {
         "nom_mun": "PANCHIMALCO",
-        "cod_mun": "10"
+        "id": "210"
     },
     {
         "nom_mun": "SAN MARCOS",
-        "cod_mun": "12"
+        "id": "211"
     },
     {
         "nom_mun": "SANTO TOMAS",
-        "cod_mun": "16"
+        "id": "212"
     },
     {
         "nom_mun": "SANTIAGO TEXACUANGOS",
-        "cod_mun": "15"
+        "id": "213"
     },
     {
         "nom_mun": "ILOPANGO",
-        "cod_mun": "07"
+        "id": "214"
     },
     {
         "nom_mun": "CUSCATANCINGO",
-        "cod_mun": "04"
+        "id": "215"
     },
     {
         "nom_mun": "SOYAPANGO",
-        "cod_mun": "17"
+        "id": "216"
     },
     {
         "nom_mun": "SAN SALVADOR",
-        "cod_mun": "14"
+        "id": "217"
     },
     {
         "nom_mun": "MEJICANOS",
-        "cod_mun": "08"
+        "id": "218"
     },
     {
         "nom_mun": "AYUTUXTEPEQUE",
-        "cod_mun": "03"
+        "id": "219"
     },
     {
         "nom_mun": "JOCOAITIQUE",
-        "cod_mun": "11"
+        "id": "182"
     },
     {
         "nom_mun": "DELGADO",
-        "cod_mun": "19"
+        "id": "220"
     },
     {
         "nom_mun": "SAN MARTIN",
-        "cod_mun": "13"
+        "id": "221"
     },
     {
         "nom_mun": "TONACATEPEQUE",
-        "cod_mun": "18"
+        "id": "222"
     },
     {
         "nom_mun": "APOPA",
-        "cod_mun": "02"
+        "id": "223"
     },
     {
         "nom_mun": "NEJAPA",
-        "cod_mun": "09"
+        "id": "224"
     },
     {
         "nom_mun": "GUAZAPA",
-        "cod_mun": "06"
+        "id": "225"
     },
     {
         "nom_mun": "AGUILARES",
-        "cod_mun": "01"
+        "id": "226"
     },
     {
         "nom_mun": "EL PAISNAL",
-        "cod_mun": "05"
+        "id": "227"
     },
     {
         "nom_mun": "SAN PEDRO PUXTLA",
-        "cod_mun": "10"
+        "id": "228"
     },
     {
         "nom_mun": "JUJUTLA",
-        "cod_mun": "07"
+        "id": "229"
     },
     {
         "nom_mun": "APANECA",
-        "cod_mun": "02"
+        "id": "230"
     },
     {
         "nom_mun": "CONCEPCION DE ATACO",
-        "cod_mun": "04"
+        "id": "231"
     },
     {
         "nom_mun": "SAN FRANCISCO MENENDEZ",
-        "cod_mun": "08"
+        "id": "232"
     },
     {
         "nom_mun": "TACUBA",
-        "cod_mun": "11"
+        "id": "233"
     },
     {
         "nom_mun": "TURIN",
-        "cod_mun": "12"
+        "id": "234"
     },
     {
         "nom_mun": "EL REFUGIO",
-        "cod_mun": "05"
+        "id": "235"
     },
     {
         "nom_mun": "ATIQUIZAYA",
-        "cod_mun": "03"
+        "id": "236"
     },
     {
         "nom_mun": "AHUACHAPAN",
-        "cod_mun": "01"
+        "id": "237"
     },
     {
         "nom_mun": "SAN LORENZO",
-        "cod_mun": "09"
+        "id": "238"
     },
     {
         "nom_mun": "TOROLA",
-        "cod_mun": "24"
+        "id": "183"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "240"
     },
     {
         "nom_mun": "LA LIBERTAD",
-        "cod_mun": "09"
+        "id": "241"
     },
     {
         "nom_mun": "JICALAPA",
-        "cod_mun": "08"
+        "id": "242"
     },
     {
         "nom_mun": "ZARAGOZA",
-        "cod_mun": "22"
+        "id": "243"
     },
     {
         "nom_mun": "EL ROSARIO",
-        "cod_mun": "07"
+        "id": "185"
     },
     {
         "nom_mun": "MEANGUERA",
-        "cod_mun": "14"
+        "id": "186"
     },
     {
         "nom_mun": "JOATECA",
-        "cod_mun": "10"
+        "id": "187"
     },
     {
         "nom_mun": "SAN SIMON",
-        "cod_mun": "21"
+        "id": "188"
     },
     {
         "nom_mun": "SAN JOSE VILLANUEVA",
-        "cod_mun": "14"
+        "id": "244"
     },
     {
         "nom_mun": "HUIZUCAR",
-        "cod_mun": "06"
+        "id": "245"
     },
     {
         "nom_mun": "TAMANIQUE",
-        "cod_mun": "18"
+        "id": "246"
     },
     {
         "nom_mun": "CHILTIUPAN",
-        "cod_mun": "05"
+        "id": "247"
     },
     {
         "nom_mun": "GUALOCOCTI",
-        "cod_mun": "08"
+        "id": "189"
     },
     {
         "nom_mun": "SAN PABLO TACACHICO",
-        "cod_mun": "17"
+        "id": "262"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "263"
     },
     {
         "nom_mun": "DELICIAS DE CONCEPCION",
-        "cod_mun": "05"
+        "id": "190"
     },
     {
         "nom_mun": "YOLOAIQUIN",
-        "cod_mun": "26"
+        "id": "191"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "264"
     },
     {
         "nom_mun": "MERCEDES UMANA",
-        "cod_mun": "11"
+        "id": "192"
     },
     {
         "nom_mun": "OSICALA",
-        "cod_mun": "15"
+        "id": "193"
     },
     {
         "nom_mun": "SANTA ISABEL ISHUATAN",
-        "cod_mun": "05"
+        "id": "194"
     },
     {
         "nom_mun": "CUISNAHUAT",
-        "cod_mun": "04"
+        "id": "195"
     },
     {
         "nom_mun": "ACAJUTLA",
-        "cod_mun": "01"
+        "id": "196"
     },
     {
         "nom_mun": "NAHULINGO",
-        "cod_mun": "09"
+        "id": "197"
     },
     {
         "nom_mun": "CALUCO",
-        "cod_mun": "03"
+        "id": "198"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "239"
     },
     {
         "nom_mun": "NUEVO CUSCATLAN",
-        "cod_mun": "10"
+        "id": "248"
     },
     {
         "nom_mun": "TEOTEPEQUE",
-        "cod_mun": "20"
+        "id": "249"
     },
     {
         "nom_mun": "COMASAGUA",
-        "cod_mun": "04"
+        "id": "250"
     },
     {
         "nom_mun": "ANTIGUO CUSCATLAN",
-        "cod_mun": "01"
+        "id": "251"
     },
     {
         "nom_mun": "TALNIQUE",
-        "cod_mun": "19"
+        "id": "252"
     },
     {
         "nom_mun": "JAYAQUE",
-        "cod_mun": "07"
+        "id": "253"
     },
     {
         "nom_mun": "TEPECOYO",
-        "cod_mun": "21"
+        "id": "254"
     },
     {
         "nom_mun": "SANTA TECLA",
-        "cod_mun": "11"
+        "id": "255"
     },
     {
         "nom_mun": "COLON",
-        "cod_mun": "03"
+        "id": "256"
     },
     {
         "nom_mun": "SACACOYO",
-        "cod_mun": "13"
+        "id": "257"
     },
     {
         "nom_mun": "CIUDAD ARCE",
-        "cod_mun": "02"
+        "id": "258"
     },
     {
         "nom_mun": "QUEZALTEPEQUE",
-        "cod_mun": "12"
+        "id": "259"
     },
     {
         "nom_mun": "SAN MATIAS",
-        "cod_mun": "16"
+        "id": "260"
     },
     {
         "nom_mun": "SAN JUAN OPICO",
-        "cod_mun": "15"
+        "id": "261"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "265"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "266"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "267"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "268"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "269"
     },
     {
         "nom_mun": "GUAYMANGO",
-        "cod_mun": "06"
+        "id": "270"
     },
     {
         "nom_mun": "SANTO DOMINGO DE GUZMAN",
-        "cod_mun": "14"
+        "id": "271"
     }
 ]

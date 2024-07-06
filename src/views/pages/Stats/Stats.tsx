@@ -82,7 +82,7 @@ export default function Stats() {
 
     const selectMunicipalities = municipalitiesData.map((municipality) => {
         return {
-            value: municipality.cod_mun,
+            value: municipality.id,
             label: municipality.nom_mun
         }
     });

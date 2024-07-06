@@ -58,6 +58,18 @@ type createPostBody = {
     };
 }
 
+export async function getPostsAround(lat: number, lon: number): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.post("posts/around-me", { lat, lon })
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
+
 export async function createPost(data: createPostBody): Promise<AxiosCustomResponse> {
     try {
         const res = await axiosInstance.post("posts", data)
