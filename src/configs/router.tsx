@@ -21,8 +21,6 @@ import ReportPet from '../views/pages/ReportPet';
 import Stats from '../views/pages/Stats';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
-import Stats from '../views/pages/Stats';
-import StatsLoader from '../lib/loaders/StatsLoader';
 import PetLoader from '../lib/loaders/PetLoader';
 import Pet from '../views/pages/Pet';
 import HomeLoader from '../lib/loaders/HomeLoader';
