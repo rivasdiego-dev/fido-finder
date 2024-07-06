@@ -18,6 +18,24 @@ export async function CreatePet(
     return { response: error, isError: true };
   }
 }
+export async function editPet(
+  id: string,
+  formData: FormData
+): Promise<AxiosCustomResponse> {
+  try {
+    const res = await axiosInstance.patch('pets/' + id, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return { response: res, isError: false };
+  } catch (error) {
+    console.warn(error);
+    if (error instanceof AxiosError)
+      return { response: error.response, isError: true };
+    return { response: error, isError: true };
+  }
+}
 
 export async function getOwnedPets(): Promise<AxiosCustomResponse> {
   try {

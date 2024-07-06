@@ -24,6 +24,8 @@ import VerifyToken from '../views/pages/VerifyToken';
 import PetLoader from '../lib/loaders/PetLoader';
 import Pet from '../views/pages/Pet';
 import HomeLoader from '../lib/loaders/HomeLoader';
+import EditPet from '../views/pages/EditPet';
+import EditPetLoader from '../lib/loaders/EditPetLoader';
 import LostPetMap from '../views/pages/LostPetMap';
 import PetQrScanner from '../views/pages/PetQrScanner';
 
@@ -44,6 +46,11 @@ export const router = createBrowserRouter(
           <Route path="/search/qr" element={<PetQrScanner />} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/pet/:id" element={<Pet />} loader={PetLoader} />
+          <Route
+            path="/pet/:id/edit"
+            element={<EditPet />}
+            loader={EditPetLoader}
+          />
           <Route path="/profile" element={<User />} />
           <Route
             path="/profile/add-pet"
