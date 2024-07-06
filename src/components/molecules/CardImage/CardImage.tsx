@@ -33,7 +33,7 @@ const CardImage = (props: CardImageProps) => {
       </div>
       {/* Post */}
       <div className="flex flex-col justify-center items-center gap-4 w-full p-4 bg-b-base-foreground rounded-xl">
-        <Link to={`/pet/${petId}`}>
+        <Link to={`/pet/${petId}`} className="w-full">
           <PetImage src={petImg} alt="Lost Pet" petName={petName} />
         </Link>
         <div className="flex w-full justify-between">

@@ -18,11 +18,7 @@ const PetLoader = async ({ params }: petArgs) => {
   if (petResponse.isError) return undefined;
   const pet = petResponse.response.data as ApiPet;
 
-  const ownerResponse = await getOneUser(pet.owner_id);
-  if (ownerResponse.isError) return undefined;
-  const owner = ownerResponse.response.data as User;
-
-  return { pet, owner };
+  return { pet };
 };
 
 export default PetLoader;

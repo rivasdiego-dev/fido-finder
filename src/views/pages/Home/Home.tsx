@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import formatDateTime from '../../../lib/utils/formatDateTime';
 
 const Home = () => {
+  // const posts: ApiPost[] = [];
   const { posts } = useLoaderData() as { posts: ApiPost[] };
   const [isRegistered] = useState<boolean>(true);
 
@@ -26,7 +27,7 @@ const Home = () => {
               <CardImage
                 key={id}
                 avatarUrl={finalImg}
-                user={users.email}
+                user={users.name!}
                 date={finalDate}
                 location={finalLocation}
                 petImg={pets.img}

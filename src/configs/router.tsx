@@ -22,6 +22,7 @@ import Stats from '../views/pages/Stats';
 import StatsLoader from '../lib/loaders/StatsLoader';
 import PetLoader from '../lib/loaders/PetLoader';
 import Pet from '../views/pages/Pet';
+import HomeLoader from '../lib/loaders/HomeLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,7 +34,7 @@ export const router = createBrowserRouter(
 
       <Route element={<AuthGuard />}>
         <Route element={<AppLayout />}>
-          <Route index path="/" element={<Home />} />
+          <Route index path="/" element={<Home />} loader={HomeLoader} />
           <Route path="/stats" element={<Stats />} loader={StatsLoader} />
           <Route path="/pet-map" element={<>Map of lost pets</>} />
           <Route path="/search" element={<>Search a lost pet</>} />
