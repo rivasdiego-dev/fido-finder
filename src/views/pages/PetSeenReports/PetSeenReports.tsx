@@ -1,5 +1,5 @@
 import { format, parse } from "@formkit/tempo";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useState } from "react";
 import extractCoordinates from "../../../lib/utils/extractCoordinates";
 import InteractiveMapElement from "../../../components/atoms/InteractiveMapElement";
@@ -7,6 +7,7 @@ import { Button } from "@nextui-org/react";
 
 export default function PetSeenReports() {
     const data = useLoaderData() as ApiSeenReport[];
+    const postId = useParams().id as string;
     const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
     const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
 
@@ -22,7 +23,10 @@ export default function PetSeenReports() {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-8 flex-1 flex flex-col">
+            <h1 className="font-quicksand text-3xl font-medium text-center mb-4">
+                Avistamientos de mascota
+            </h1>
             {position ? (
                 <InteractiveMapElement points={position} centerPoint={position} />
             ) : data.length > 0 ? (
@@ -31,7 +35,16 @@ export default function PetSeenReports() {
                     centerPoint={extractCoordinates(data[0].geom)}
                 />
             ) : (
-                <p className="text-3xl">No hay reportes de avistamiento</p>
+                <div className="flex-1 grid place-items-center">
+                    <div className="flex flex-col gap-4">
+                        <p className="text-3xl text-center">No hay reportes de avistamiento</p>
+                        <Link to={`/post/${postId}/report`}>
+                            <Button fullWidth size="lg">
+                                Reportar avistamiento
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
             )}
 
             <div className="mt-4">

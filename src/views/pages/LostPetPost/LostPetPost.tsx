@@ -91,13 +91,15 @@ export default function LostPetPost() {
                         ]}
                     />
                     <div className='flex gap-2'>
-                        <Button
-                            size='lg'
-                            color='primary'
-                            variant='flat'
-                        >
-                            Reportar
-                        </Button>
+                        <Link to={`/post/${data.id}/report`}>
+                            <Button
+                                size='lg'
+                                color='primary'
+                                variant='flat'
+                            >
+                                Reportar
+                            </Button>
+                        </Link>
 
                         <Button
                             size='lg'
