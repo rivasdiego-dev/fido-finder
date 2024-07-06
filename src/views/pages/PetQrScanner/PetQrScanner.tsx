@@ -4,7 +4,9 @@ import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { isUUID } from "../../../lib/utils/isUUID";
 
-const QrReader = () => {
+import "./PetQrScanner.css";
+
+const PetQrScanner = () => {
     const scanner = useRef<QrScanner>();
     const videoEl = useRef<HTMLVideoElement>(null);
     const qrBoxEl = useRef<HTMLDivElement>(null);
@@ -65,7 +67,7 @@ const QrReader = () => {
             <video ref={videoEl}></video>
             <div ref={qrBoxEl} className="qr-box">
                 <img
-                    src={"/img/logo.png"}
+                    src={"/img/qr-frame.svg"}
                     alt="Qr Frame"
                     width={256}
                     height={256}
@@ -90,4 +92,4 @@ const QrReader = () => {
     );
 };
 
-export default QrReader;
+export default PetQrScanner;
