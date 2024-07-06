@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useRef, useState } from "react";
 import QrScanner from "qr-scanner";
 import { toast } from "sonner";
@@ -39,7 +40,6 @@ const PetQrScanner = () => {
                 overlay: qrBoxEl?.current || undefined,
             });
 
-            // 🚀 Start QR Scanner
             scanner?.current
                 ?.start()
                 .then(() => setQrOn(true))
@@ -75,7 +75,7 @@ const PetQrScanner = () => {
                 />
             </div>
 
-            {scannedResult && toast.success(`Escaneado: ${scannedResult}`, { id: "scanned-result" })}
+            {scannedResult && toast.success(`Mascota detectada!`, { id: "scanned-result" })}
         </div>
     );
 };
