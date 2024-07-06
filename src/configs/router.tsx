@@ -25,6 +25,7 @@ import PetLoader from '../lib/loaders/PetLoader';
 import Pet from '../views/pages/Pet';
 import HomeLoader from '../lib/loaders/HomeLoader';
 import LostPetMap from '../views/pages/LostPetMap';
+import PetQrScanner from '../views/pages/PetQrScanner';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ export const router = createBrowserRouter(
           <Route path="/stats" element={<Stats />} loader={StatsLoader} />
           <Route path="/pet-map" element={<LostPetMap />} />
           <Route path="/search" element={<>Search a lost pet</>} />
+          <Route path="/search/qr" element={<PetQrScanner />} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/pet/:id" element={<Pet />} loader={PetLoader} />
           <Route path="/profile" element={<User />} />
