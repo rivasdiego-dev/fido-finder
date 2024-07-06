@@ -24,6 +24,7 @@ import VerifyToken from '../views/pages/VerifyToken';
 import PetLoader from '../lib/loaders/PetLoader';
 import Pet from '../views/pages/Pet';
 import HomeLoader from '../lib/loaders/HomeLoader';
+import LostPetMap from '../views/pages/LostPetMap';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,7 +38,7 @@ export const router = createBrowserRouter(
         <Route element={<AppLayout />}>
           <Route index path="/" element={<Home />} loader={HomeLoader} />
           <Route path="/stats" element={<Stats />} loader={StatsLoader} />
-          <Route path="/pet-map" element={<>Map of lost pets</>} />
+          <Route path="/pet-map" element={<LostPetMap />} />
           <Route path="/search" element={<>Search a lost pet</>} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/pet/:id" element={<Pet />} loader={PetLoader} />
@@ -52,6 +53,7 @@ export const router = createBrowserRouter(
             element={<LostPetPost />}
             loader={LostPetPostLoader}
           />
+          <Route path="/post/:id/report" element={<ReportPet />} />
           <Route
             path="/post/:id/seen-reports"
             element={<PetSeenReports />}

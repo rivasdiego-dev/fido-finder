@@ -8,8 +8,8 @@ import { toast } from "sonner";
 export default function ReportPet() {
 
     const [position, setPosition] = useState<{ lat: number; lng: number }>({
-        lat: 14.634915,
-        lng: -90.506882
+        lat: 13.70126934940928,
+        lng: -89.22444999217987
     });
     const postId = useParams().id as string;
     const navigate = useNavigate();

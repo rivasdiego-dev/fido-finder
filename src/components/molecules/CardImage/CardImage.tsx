@@ -63,8 +63,7 @@ const CardImage = (props: CardImageProps) => {
               Ver publicación
             </Button>
           </Link>
-          {/* TODO: Redirect to report view */}
-          <Link to={`/post/postId/seen-reports`}>
+          <Link to={`/post/${postId}/report`}>
             <Button
               color="primary"
               fullWidth
