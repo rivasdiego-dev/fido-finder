@@ -18,7 +18,7 @@ const PetQrScanner = () => {
     const onScanSuccess = (result: QrScanner.ScanResult) => {
         if (!result?.data) return;
         if (!isUUID(result?.data)) {
-            toast.error("El código QR no corresponde a ninguna mascota.");
+            toast.error("El código QR no corresponde a ninguna mascota.", { id: "invalid-qr" });
             return;
         }
         setScannedResult(result.data);
@@ -75,19 +75,7 @@ const PetQrScanner = () => {
                 />
             </div>
 
-            {scannedResult && (
-                <p
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 99999,
-                        color: "white",
-                    }}
-                >
-                    Scanned Result: {scannedResult}
-                </p>
-            )}
+            {scannedResult && toast.success(`Escaneado: ${scannedResult}`, { id: "scanned-result" })}
         </div>
     );
 };

@@ -46,17 +46,17 @@ const Pet = () => {
       </div>
       <p className="text-justify">{pet.description}</p>
       <div className="flex flex-col items-center justify-center">
-        <div className="p-2 bg-white rounded-xl">
+        <div className="p-5 bg-white rounded-2xl">
           <QRCodeSVG
             value={pet.id}
-            size={150}
+            size={175}
             bgColor={'#ffffff'}
             fgColor={'#000000'}
             level={'H'}
             includeMargin={false}
           />
         </div>
-        <p className="">Código QR de {pet.name}</p>
+        <p className="font-roboto text-xl mt-3">Código QR de {pet.name}</p>
       </div>
     </div>
   ) : (
