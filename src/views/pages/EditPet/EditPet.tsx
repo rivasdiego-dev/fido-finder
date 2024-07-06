@@ -1,50 +1,110 @@
-import { Button, Input } from '@nextui-org/react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@nextui-org/react';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import CustomInput from '../../../components/molecules/CustomInput';
+import CustomSelect from '../../../components/molecules/CustomSelect';
+import CustomTextArea from '../../../components/molecules/CustomTextArea';
+import InputImage from '../../../components/molecules/ImageInput/ImageInput';
+import { petFormSchema, typePetFormSchema } from '../../../lib/schemas/PetForm';
+import { CreatePet, editPet } from '../../../lib/services/pets.service';
 
-const EditPet = () => {
+export default function AddPet() {
+  const { petInfo, breeds, colors } = useLoaderData() as {
+    petInfo: ApiPet;
+    breeds: { value: string; label: string }[];
+    colors: { value: string; label: string }[];
+  };
+  const navigate = useNavigate();
+
+  const [image, setImage] = useState<File | null>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<typePetFormSchema>({ resolver: zodResolver(petFormSchema) });
+
+  const onSubmit: SubmitHandler<typePetFormSchema> = async (data) => {
+    if (!image) {
+      toast.error('Debes seleccionar una imagen para tu mascota', {
+        id: 'pet-creation',
+      });
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('description', data.description);
+    formData.append('breed_id', data.breed);
+    formData.append('color_id', data.color);
+    formData.append('file', image);
+
+    toast.loading('editando mascota...', { id: 'pet-creation' });
+
+    const res = await editPet(petInfo.id, formData);
+
+    if (res.isError) {
+      toast.error('Ocurrió un error al editar tu mascota', {
+        id: 'pet-creation',
+      });
+      return;
+    }
+
+    toast.success('Mascota editada con éxito', { id: 'pet-creation' });
+    navigate('/profile');
+  };
+
   return (
-    <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
-      <img
-        className="w-full h-[250px] object-cover rounded-lg"
-        alt="Pet"
-        src="img/lost-dog.jpg"
+    <form onSubmit={handleSubmit(onSubmit)} className="px-8">
+      {/* TODO: Show pet image */}
+      <InputImage
+        inputLabel="Podras ver a tu mascota aquí"
+        fileState={[image, setImage]}
+        className="mb-4"
       />
-      <input type="hidden" />
-      <div className="flex justify-center">
-        <Button color="primary" variant="bordered">
-          Cambiar Foto
-        </Button>
+      <div className="flex flex-col gap-3 mb-8">
+        <CustomInput
+          id="name"
+          label="Nombre"
+          value={petInfo.name}
+          register={register}
+          errors={errors}
+        />
+        <CustomSelect
+          id="breed"
+          label="Raza"
+          options={breeds}
+          register={register}
+          value={petInfo.breed_id}
+          errors={errors}
+        />
+        <CustomSelect
+          id="color"
+          label="Color"
+          options={colors}
+          register={register}
+          value={petInfo.color_id}
+          errors={errors}
+        />
+        <CustomTextArea
+          id="description"
+          label="Descripción"
+          value={petInfo.description}
+          register={register}
+          errors={errors}
+        />
       </div>
-      <Input
-        type="animalName"
-        label="Nombre"
-        placeholder="Chobe"
-        labelPlacement="outside"
-      />
-      <Input
-        type="animalType"
-        label="Tipo"
-        placeholder="Perro"
-        labelPlacement="outside"
-      />
-      <Input
-        type="animalRace"
-        label="Raza"
-        placeholder="Gran Danés"
-        labelPlacement="outside"
-      />
-      <Input
-        type="animalColor"
-        label="Color"
-        placeholder="Café"
-        labelPlacement="outside"
-      />
-      <div>
-        <Button className="w-full" color="primary" variant="solid">
-          Cambiar Foto
-        </Button>
-      </div>
-    </div>
-  );
-};
 
-export default EditPet;
+      <Button
+        type="submit"
+        color="primary"
+        className="w-full text-lg font-medium"
+        size="lg"
+      >
+        Guardar
+      </Button>
+    </form>
+  );
+}
