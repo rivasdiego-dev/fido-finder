@@ -9,7 +9,7 @@ import CustomSelect from '../../../components/molecules/CustomSelect';
 import CustomTextArea from '../../../components/molecules/CustomTextArea';
 import InputImage from '../../../components/molecules/ImageInput/ImageInput';
 import { petFormSchema, typePetFormSchema } from '../../../lib/schemas/PetForm';
-import { CreatePet, editPet } from '../../../lib/services/pets.service';
+import { editPet } from '../../../lib/services/pets.service';
 
 export default function AddPet() {
   const { petInfo, breeds, colors } = useLoaderData() as {
@@ -62,6 +62,7 @@ export default function AddPet() {
       <InputImage
         inputLabel="Podras ver a tu mascota aquí"
         fileState={[image, setImage]}
+        fileUrl={petInfo.img}
         className="mb-4"
       />
       <div className="flex flex-col gap-3 mb-8">
