@@ -1,36 +1,65 @@
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import PetImage from '../../../components/atoms/PetImage';
+import { useEffect, useState } from 'react';
+import { getOneUser } from '../../../lib/services/users.service';
+import QRCode, { QRCodeSVG } from 'qrcode.react';
 
 const Pet = () => {
-  return (
+  const { pet } = useLoaderData() as { pet: ApiPet };
+  const [owner, setOwner] = useState<User>();
+
+  const navigate = useNavigate();
+
+  const handleOwnerData = async () => {
+    const ownerResponse = await getOneUser(pet.owner_id);
+    if (ownerResponse.isError) {
+      navigate('/');
+      return;
+    }
+
+    const tempOwner = ownerResponse.response.data as User;
+    setOwner(tempOwner);
+  };
+
+  useEffect(() => {
+    handleOwnerData();
+  }, []);
+
+  return owner ? (
     <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
       <PetImage
         alt="Pet"
-        petName="Fido"
-        src="img/lost-dog.jpg"
-        description="Mascota de DataHard911"
+        petName={pet.name}
+        src={pet.img}
+        description={`Mascota de ${owner!.name}`}
       />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <p className="font-bold text-xl font-roboto-condensed">Chobe es un</p>
-          <p>Gorila Espalda Plateada</p>
+          <p>{pet.breeds.breed}</p>
         </div>
         <div className="flex justify-between items-center">
           <p className="font-bold text-xl font-roboto-condensed">Color</p>
-          <p>Gris</p>
+          <p>{pet.colors.color}</p>
         </div>
       </div>
-      <p className="text-justify">
-        Mi gorila es grande y fuerte, con un pelaje negro brillante y ojos
-        expresivos. Lleva una cicatriz distintiva en su pata derecha y tiene una
-        mancha blanca en su pecho. Le encanta comer plátanos. Es amigable y
-        curioso, pero puede asustarse fácilmente si escucha cumbias,
-        especialmente Los Ángeles Azules.
-      </p>
+      <p className="text-justify">{pet.description}</p>
       <div className="flex flex-col items-center justify-center">
-        <img src="img/qr.png" alt="qr" />
-        <p className="">Código QR de Chobe</p>
+        <div className="p-2 bg-white rounded-xl">
+          <QRCodeSVG
+            value={pet.id}
+            size={150}
+            bgColor={'#ffffff'}
+            fgColor={'#000000'}
+            level={'H'}
+            includeMargin={false}
+          />
+        </div>
+        <p className="">Código QR de {pet.name}</p>
       </div>
     </div>
+  ) : (
+    ''
   );
 };
 
