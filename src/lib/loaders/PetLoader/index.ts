@@ -1,6 +1,5 @@
 import { ParamParseKey, Params } from 'react-router-dom';
 import { getOnePet } from '../../services/pets.service';
-import { getOneUser } from '../../services/users.service';
 
 const Paths = {
   petDetail: '/pet/:id',

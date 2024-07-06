@@ -1,8 +1,8 @@
+import { QRCodeSVG } from 'qrcode.react';
+import { useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import PetImage from '../../../components/atoms/PetImage';
-import { useEffect, useState } from 'react';
 import { getOneUser } from '../../../lib/services/users.service';
-import QRCode, { QRCodeSVG } from 'qrcode.react';
 
 const Pet = () => {
   const { pet } = useLoaderData() as { pet: ApiPet };
@@ -23,6 +23,7 @@ const Pet = () => {
 
   useEffect(() => {
     handleOwnerData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return owner ? (
