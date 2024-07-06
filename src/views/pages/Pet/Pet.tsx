@@ -1,13 +1,14 @@
-import { QRCodeSVG } from 'qrcode.react';
-import { useEffect, useState } from 'react';
+import { QRCodeCanvas } from 'qrcode.react';
+import { useEffect, useRef, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import PetImage from '../../../components/atoms/PetImage';
 import { getOneUser } from '../../../lib/services/users.service';
+import { Button } from '@nextui-org/react';
 
 const Pet = () => {
   const { pet } = useLoaderData() as { pet: ApiPet };
   const [owner, setOwner] = useState<User>();
-
+  const qrCodeRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   const handleOwnerData = async () => {
@@ -25,6 +26,19 @@ const Pet = () => {
     handleOwnerData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const downloadQR = () => {
+    if (qrCodeRef.current) {
+      const canvas = qrCodeRef.current.querySelector('canvas');
+      if (canvas) {
+        const url = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `${pet.name}-qr-code.png`;
+        link.click();
+      }
+    }
+  };
 
   return owner ? (
     <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
@@ -46,8 +60,8 @@ const Pet = () => {
       </div>
       <p className="text-justify">{pet.description}</p>
       <div className="flex flex-col items-center justify-center">
-        <div className="p-5 bg-white rounded-2xl">
-          <QRCodeSVG
+        <div ref={qrCodeRef} className="p-5 bg-white rounded-2xl">
+          <QRCodeCanvas
             value={pet.id}
             size={175}
             bgColor={'#ffffff'}
@@ -57,6 +71,15 @@ const Pet = () => {
           />
         </div>
         <p className="font-roboto text-xl mt-3">Código QR de {pet.name}</p>
+        <Button
+          onClick={downloadQR}
+          fullWidth
+          radius='sm'
+          className='mt-3 max-w-xs'
+          variant='faded'
+        >
+          Descargar QR
+        </Button>
       </div>
     </div>
   ) : (
