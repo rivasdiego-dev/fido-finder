@@ -4,9 +4,11 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import PetImage from '../../../components/atoms/PetImage';
 import { getOneUser } from '../../../lib/services/users.service';
 import { Button } from '@nextui-org/react';
+import { useUserStore } from '../../../lib/store/user';
 
 const Pet = () => {
   const { pet } = useLoaderData() as { pet: ApiPet };
+  const user = useUserStore((state) => state.user);
   const [owner, setOwner] = useState<User>();
   const qrCodeRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -50,7 +52,7 @@ const Pet = () => {
       />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <p className="font-bold text-xl font-roboto-condensed">Chobe es un</p>
+          <p className="font-bold text-xl font-roboto-condensed">{pet.name} es un</p>
           <p>{pet.breeds.breed}</p>
         </div>
         <div className="flex justify-between items-center">
@@ -71,15 +73,19 @@ const Pet = () => {
           />
         </div>
         <p className="font-roboto text-xl mt-3">Código QR de {pet.name}</p>
-        <Button
-          onClick={downloadQR}
-          fullWidth
-          radius='sm'
-          className='mt-3 max-w-xs'
-          variant='faded'
-        >
-          Descargar QR
-        </Button>
+        {
+          user?.id === pet.owner_id ? (
+            <Button
+              onClick={downloadQR}
+              fullWidth
+              radius='sm'
+              className='mt-3 max-w-xs'
+              variant='faded'
+            >
+              Descargar QR
+            </Button>
+          ) : null
+        }
       </div>
     </div>
   ) : (
