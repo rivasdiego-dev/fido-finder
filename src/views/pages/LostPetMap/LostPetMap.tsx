@@ -26,7 +26,6 @@ export default function LostPetMap() {
                             return;
                         }
                         const posts = res.response.data as ApiPost[];
-
                         const locations = posts.map((post) => {
                             const coordinates = extractCoordinates(post.lost_in);
                             return {
@@ -37,10 +36,16 @@ export default function LostPetMap() {
                                         <div className="flex flex-col items-center">
                                             <div className="flex flex-col items-center w-32">
                                                 <p className="font-quicksand font-semibold text-lg leading-3">{post.pets.name}</p>
-                                                <img src={post.pets.img} alt="Pet" className=" rounded-md -translate-y-3" />
+                                                <div className="h-40 w-full overflow-hidden rounded-md -translate-y-3">
+                                                    <img
+                                                        src={post.pets.img}
+                                                        alt="Pet"
+                                                        className="object-cover h-full w-full"
+                                                    />
+                                                </div>
                                             </div>
-                                            <Link to={`/post/${post.id}`}>
-                                                <Button color="primary" size="sm">
+                                            <Link to={`/post/${post.id}`} className="w-full">
+                                                <Button color="secondary" variant="flat" fullWidth>
                                                     Ver más
                                                 </Button>
                                             </Link>
@@ -49,7 +54,6 @@ export default function LostPetMap() {
                                 ),
                             };
                         });
-
                         setPostsLocations(locations);
                     })
                 },
@@ -62,9 +66,7 @@ export default function LostPetMap() {
         }
     }, []);
 
-    if (!currentPosition) {
-        return <Loader />;
-    }
+    if (!currentPosition) return <Loader />;
 
     const { latitude, longitude } = currentPosition;
 
