@@ -6,6 +6,7 @@ import { getOneUser } from '../../../lib/services/users.service';
 import { Button } from '@nextui-org/react';
 import { IconEdit } from '@tabler/icons-react';
 import { QRCodeSVG } from 'qrcode.react';
+import { useUserStore } from '../../../lib/store/user';
 
 const Pet = () => {
   const { pet } = useLoaderData() as { pet: ApiPet };
@@ -46,15 +47,19 @@ const Pet = () => {
   return owner ? (
     <div className="px-5 flex flex-col gap-4 overflow-y-scroll font-roboto-condensed">
       <div className="relative">
-        {/* TODO: Check ownership */}
-        <Link
-          className="absolute top-0 right-0 z-50 m-2"
-          to={`/pet/${pet.id}/edit`}
-        >
-          <Button variant="solid" color="primary" radius="sm" isIconOnly>
-            <IconEdit />
-          </Button>
-        </Link>
+        {user?.id === pet.owner_id ? (
+          <Link
+            className="absolute top-0 right-0 z-50 m-2"
+            to={`/pet/${pet.id}/edit`}
+          >
+            <Button variant="solid" color="primary" radius="sm" isIconOnly>
+              <IconEdit />
+            </Button>
+          </Link>
+        ) : (
+          ''
+        )}
+
         <PetImage
           alt="Pet"
           petName={pet.name}
