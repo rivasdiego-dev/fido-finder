@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Switch } from "@nextui-org/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ConfirmationModal from "../../../components/atoms/ConfirmationDialog/ConfirmationDialog";
 import CustomInput from "../../../components/molecules/CustomInput";
 import { editUserSchema, typeEditUserSchema } from "../../../lib/schemas/EditUser";
@@ -119,9 +119,11 @@ const EditUser = () => {
         <p className="text-lg font-roboto-condensed">
           Localización
         </p>
-        <Button variant="faded" fullWidth >
-          Editar
-        </Button>
+        <Link to="/profile/edit/residence" className="w-full">
+          <Button variant="faded" fullWidth >
+            Editar
+          </Button>
+        </Link>
       </div>
 
       <div className="flex flex-col gap-2 my-4">

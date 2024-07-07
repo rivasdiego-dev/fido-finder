@@ -35,6 +35,30 @@ export async function updateUser(data: { name: string, lastname: string, dob?: s
   }
 }
 
+export async function updateUserResidence(data: { lon: number, lat: number }): Promise<AxiosCustomResponse> {
+  try {
+    const res = await axiosInstance.patch('users/residence', data);
+    return { response: res, isError: false };
+  } catch (error) {
+    console.warn(error);
+    if (error instanceof AxiosError)
+      return { response: error.response, isError: true };
+    return { response: error, isError: true };
+  }
+}
+
+export async function deleteUserResidence(): Promise<AxiosCustomResponse> {
+  try {
+    const res = await axiosInstance.delete('users/residence');
+    return { response: res, isError: false };
+  } catch (error) {
+    console.warn(error);
+    if (error instanceof AxiosError)
+      return { response: error.response, isError: true };
+    return { response: error, isError: true };
+  }
+}
+
 export async function setUsersLocation(location: { lon: number, lat: number }): Promise<AxiosCustomResponse> {
   try {
     const res = await axiosInstance.patch('users/location', location);

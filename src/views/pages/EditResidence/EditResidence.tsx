@@ -1,40 +1,105 @@
-import { Button, Input } from '@nextui-org/react';
+import { Button } from "@nextui-org/react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import InteractiveMapElement from "../../../components/atoms/InteractiveMapElement";
+import { deleteUserResidence, updateUserResidence } from "../../../lib/services/users.service";
 
 const EditResidence = () => {
+  const [position, setPosition] = useState<{ lat: number; lng: number }>({
+    lat: 13.70126934940928,
+    lng: -89.22444999217987
+  });
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handleReport = async () => {
+    setLoading(true);
+    toast.loading("Guardando...", { id: "reporting" });
+    const res = await updateUserResidence({ lat: position.lat, lon: position.lng });
+    if (res.isError) {
+      toast.error("Error al guardar la información", { id: "reporting" });
+      return;
+    }
+
+    setLoading(false);
+    toast.success("Localización de residencia actualizada con éxito!", { id: "reporting" });
+    navigate(`/profile`);
+  }
+
+  const handleDeleteLocation = async () => {
+    setLoading(true);
+    toast.loading("Eliminando...", { id: "reporting" });
+    const res = await deleteUserResidence();
+    if (res.isError) {
+      toast.error("Error al eliminar la información", { id: "reporting" });
+      return;
+    }
+
+    setLoading(false);
+    toast.success("Localización de residencia eliminada con éxito!", { id: "reporting" });
+    navigate(`/profile`);
+  }
+
   return (
-    <div className="px-5 flex flex-col justify-center gap-4 font-roboto-condensed">
-      <p className="text-2xl text-center">Lugar de Residencia</p>
-      <div className="bg-white h-[250px] rounded-xl">
-        <p className="text-black text-center">MAPA</p>
-      </div>
-      <div className="flex gap-2">
-        <Input
-          type="latitude"
-          label="Latitud"
-          placeholder="Latitud"
-          labelPlacement="outside"
+    <main className="flex-1 grid place-items-center">
+      <div className="p-2 w-full">
+        <h1 className="font-quicksand text-3xl font-medium text-center mb-4">
+          Lugar de residencia
+        </h1>
+        <InteractiveMapElement
+          points={position}
+          editable
+          onPointChange={setPosition}
         />
-        <Input
-          type="longitude"
-          label="Longitud"
-          placeholder="Longitud"
-          labelPlacement="outside"
-        />
-      </div>
-      <div className="flex flex-col gap-2">
-        <Button color="primary" variant="solid">
+        <p className="text-neutral-500 font-roboto font-semibold text-sm text-center">
+          Latitud: {position.lat} <br />  Longitud: {position.lng}
+        </p>
+        <Button
+          size="lg"
+          color="default"
+          variant="flat"
+          fullWidth
+          onClick={() => navigator.geolocation.getCurrentPosition(
+            (position) => {
+              setPosition({ lat: position.coords.latitude, lng: position.coords.longitude });
+            },
+            (error) => alert(error.message)
+          )}
+        >
           Utilizar ubicación actual
         </Button>
-        <Button color="danger" variant="solid">
-          Eliminar localización
+
+        <Button
+          size="lg"
+          color="primary"
+          variant="shadow"
+          fullWidth
+          onClick={handleReport}
+          disabled={loading}
+          className="mt-2"
+        >
+          Guardar
         </Button>
-        <p className="text-sm font-thin">
-          Al eliminar tu ubicación, los registros de la misma no podran ser
-          recuperados y no podremos enviarte contenido relevante cerca.
+
+        <Button
+          size="lg"
+          color="danger"
+          variant="shadow"
+          fullWidth
+          onClick={handleDeleteLocation}
+          disabled={loading}
+          className="mt-2"
+        >
+          Eliminar mi ubicación
+        </Button>
+        <p className="text-sm text-primary-200 mt-4 px-8">
+          Al eliminar tu ubicación, los registros de la misma no podran ser recuperados y no podremos enviarte contenido relevante cerca.
         </p>
       </div>
-    </div>
-  );
+    </main>
+  )
+
 };
 
 export default EditResidence;

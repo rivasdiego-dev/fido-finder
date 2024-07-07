@@ -45,7 +45,7 @@ export default function AddPet() {
     formData.append('color_id', data.color);
     formData.append('file', image);
 
-    toast.loading('editando mascota...', { id: 'pet-creation' });
+    toast.loading('Guardando cambios...', { id: 'pet-creation' });
 
     const res = await editPet(petInfo.id, formData);
 
@@ -56,7 +56,7 @@ export default function AddPet() {
       return;
     }
 
-    toast.success('Mascota editada con éxito', { id: 'pet-creation' });
+    toast.success('Mascota editada con éxito!', { id: 'pet-creation' });
     navigate('/profile');
   };
 

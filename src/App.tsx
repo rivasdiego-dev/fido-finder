@@ -18,7 +18,7 @@ function App() {
           const { latitude, longitude } = position.coords;
           setUsersLocation({ lat: latitude, lon: longitude, });
         });
-      }, 5000);
+      }, 300000); // 5 minutes
       return () => clearInterval(id);
     }
   }, [user, tracking, setLiveLocation]);
