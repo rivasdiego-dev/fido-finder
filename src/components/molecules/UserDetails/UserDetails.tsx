@@ -2,10 +2,8 @@ import {
   Button,
   Popover,
   PopoverContent,
-  PopoverTrigger,
-  Tooltip,
+  PopoverTrigger
 } from '@nextui-org/react';
-import { useEffect } from 'react';
 
 type UserDetailsProps = {
   name: string;

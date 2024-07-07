@@ -1,11 +1,10 @@
+import { Button } from '@nextui-org/react';
+import { IconEdit } from '@tabler/icons-react';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import PetImage from '../../../components/atoms/PetImage';
 import { getOneUser } from '../../../lib/services/users.service';
-import { Button } from '@nextui-org/react';
-import { IconEdit } from '@tabler/icons-react';
-import { QRCodeSVG } from 'qrcode.react';
 import { useUserStore } from '../../../lib/store/user';
 
 const Pet = () => {
