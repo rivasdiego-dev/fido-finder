@@ -34,6 +34,11 @@ const User = () => {
       <div className="px-5 flex flex-col gap-4 overflow-y-scroll">
         <UserDetails
           name={`${user!.name} ${user!.lastname}`}
+          location={
+            user!.locationInfo.community
+              ? user!.locationInfo.community
+              : user!.locationInfo.mun
+          }
           email={user!.email}
           phone={user!.phone_number}
           img={user!.img}

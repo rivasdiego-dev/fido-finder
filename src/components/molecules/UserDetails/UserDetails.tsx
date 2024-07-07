@@ -2,18 +2,19 @@ import {
   Button,
   Popover,
   PopoverContent,
-  PopoverTrigger
+  PopoverTrigger,
 } from '@nextui-org/react';
 
 type UserDetailsProps = {
   name: string;
   email: string;
+  location: string;
   img: string | null;
   phone: string | null;
 };
 
 const UserDetails = (props: UserDetailsProps) => {
-  const { name, email, phone, img } = props;
+  const { name, email, phone, img, location } = props;
 
   return (
     <div className="relative flex font-roboto-condensed flex-col justify-center items-center gap-4 w-full px-4 pb-4 mt-12 bg-b-base-foreground rounded-xl">
@@ -32,7 +33,7 @@ const UserDetails = (props: UserDetailsProps) => {
         <div className="flex gap-1 justify-center items-center">
           <img src="img/Map Pin.png" alt="location" className="w-4 h-4" />
           {/* TODO: Add residence */}
-          <p>San Salvador, Mejicanos</p>
+          <p>{location}</p>
         </div>
       </div>
       <div className="flex justify-evenly w-9/12">
