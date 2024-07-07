@@ -1,13 +1,17 @@
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/dropdown";
 import { IconChartBar, IconLogout, IconMenu2, IconUserCog } from "@tabler/icons-react";
 import { useUserStore } from "../../../lib/store/user";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AppBarMenu() {
 
     const resetData = useUserStore((state) => state.resetData);
+    const navigate = useNavigate();
 
-    const handleLogout = () => resetData();
+    const handleLogout = () => {
+        resetData();
+        navigate('/login');
+    };
 
     return (
         <Dropdown>
