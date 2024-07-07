@@ -11,6 +11,7 @@ interface CustomInputProps<T extends FieldValues> {
   label: string;
   register: UseFormRegister<T>;
   value?: string;
+  type?: string;
   errors: FieldErrors<T>;
   placeholder?: string;
 }
@@ -20,6 +21,7 @@ export default function CustomInput<T extends FieldValues>({
   label,
   register,
   value,
+  type,
   errors,
   placeholder,
 }: CustomInputProps<T>) {
@@ -28,6 +30,7 @@ export default function CustomInput<T extends FieldValues>({
       <Input
         id={id as string}
         label={label}
+        type={type ?? 'text'}
         defaultValue={value ?? value}
         labelPlacement="outside"
         placeholder={placeholder}

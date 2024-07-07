@@ -1,5 +1,5 @@
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/dropdown";
-import { IconChartBar, IconLogout, IconMenu2 } from "@tabler/icons-react";
+import { IconChartBar, IconLogout, IconMenu2, IconUserCog } from "@tabler/icons-react";
 import { useUserStore } from "../../../lib/store/user";
 import { Link } from "react-router-dom";
 
@@ -20,6 +20,16 @@ export default function AppBarMenu() {
                         <div className="flex gap-2 items-center align-middle">
                             <IconChartBar />
                             <p>Estadísticas</p>
+                        </div>
+                    </Link>
+                </DropdownItem>
+                <DropdownItem key="edit-profile">
+                    <Link to="/profile/edit">
+                        <div className="flex gap-2 items-center align-middle">
+                            <IconUserCog />
+                            <p>
+                                Editar Perfil
+                            </p>
                         </div>
                     </Link>
                 </DropdownItem>

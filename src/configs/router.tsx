@@ -5,31 +5,33 @@ import {
 } from 'react-router-dom';
 import AuthGuard from '../components/guards/AuthGuard';
 import AddPetLoader from '../lib/loaders/AddPetLoader';
+import EditPetLoader from '../lib/loaders/EditPetLoader';
+import HomeLoader from '../lib/loaders/HomeLoader';
 import LostPetPostLoader from '../lib/loaders/LostPetPostLoader';
+import PetLoader from '../lib/loaders/PetLoader';
+import SearchLoader from '../lib/loaders/SearchLoader';
 import SeenReportsLoader from '../lib/loaders/SeenReportsLoader';
 import StatsLoader from '../lib/loaders/StatsLoader';
 import AppLayout from '../views/layouts/AppLayout';
 import AuthLayout from '../views/layouts/AuthLayout';
 import AddPet from '../views/pages/AddPet';
+import EditPet from '../views/pages/EditPet';
+import EditResidence from '../views/pages/EditResidence';
+import EditUser from '../views/pages/EditUser';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
+import LostPetMap from '../views/pages/LostPetMap';
 import LostPetPost from '../views/pages/LostPetPost';
 import MyPosts from '../views/pages/MyPosts';
 import NewPost from '../views/pages/NewPost';
+import Pet from '../views/pages/Pet';
+import PetQrScanner from '../views/pages/PetQrScanner';
 import PetSeenReports from '../views/pages/PetSeenReports';
 import ReportPet from '../views/pages/ReportPet';
+import Search from '../views/pages/Search';
 import Stats from '../views/pages/Stats';
 import User from '../views/pages/User';
 import VerifyToken from '../views/pages/VerifyToken';
-import PetLoader from '../lib/loaders/PetLoader';
-import Pet from '../views/pages/Pet';
-import HomeLoader from '../lib/loaders/HomeLoader';
-import EditPet from '../views/pages/EditPet';
-import EditPetLoader from '../lib/loaders/EditPetLoader';
-import LostPetMap from '../views/pages/LostPetMap';
-import PetQrScanner from '../views/pages/PetQrScanner';
-import Search from '../views/pages/Search';
-import SearchLoader from '../lib/loaders/SearchLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -54,6 +56,8 @@ export const router = createBrowserRouter(
             loader={EditPetLoader}
           />
           <Route path="/profile" element={<User />} />
+          <Route path="/profile/edit" element={<EditUser />} />
+          <Route path="/profile/edit/residence" element={<EditResidence />} />
           <Route
             path="/profile/add-pet"
             element={<AddPet />}
