@@ -22,6 +22,7 @@ const PetQrScanner = () => {
             toast.error("El código QR no corresponde a ninguna mascota.", { id: "invalid-qr" });
             return;
         }
+        if (!videoEl?.current) scanner?.current?.stop();
         setScannedResult(result.data);
         navigate(`/pet/${result.data}`);
     };
@@ -75,7 +76,12 @@ const PetQrScanner = () => {
                 />
             </div>
 
-            {scannedResult && toast.success(`Mascota detectada!`, { id: "scanned-result" })}
+            {scannedResult && toast.success(`Mascota detectada!`, {
+                id: "scanned-result", action: {
+                    label: "Ver mascota",
+                    onClick: () => navigate(`/pet/${scannedResult}`),
+                },
+            })}
         </div>
     );
 };
