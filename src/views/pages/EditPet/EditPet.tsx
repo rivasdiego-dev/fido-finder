@@ -61,65 +61,65 @@ export default function AddPet() {
   };
 
   useEffect(() => {
-    if (user?.id !== petInfo.owner_id) {
+    if (user!.id !== petInfo.owner_id) {
       navigate('/');
     } else {
       setIsOwner(true);
     }
   }, []);
 
-  return (
-    isOwner ?? (
-      <form onSubmit={handleSubmit(onSubmit)} className="px-8">
-        {/* TODO: Show pet image */}
-        <InputImage
-          inputLabel="Podras ver a tu mascota aquí"
-          fileState={[image, setImage]}
-          fileUrl={petInfo.img}
-          className="mb-4"
+  return isOwner ? (
+    <form onSubmit={handleSubmit(onSubmit)} className="px-8">
+      {/* TODO: Show pet image */}
+      <InputImage
+        inputLabel="Podras ver a tu mascota aquí"
+        fileState={[image, setImage]}
+        fileUrl={petInfo.img}
+        className="mb-4"
+      />
+      <div className="flex flex-col gap-3 mb-8">
+        <CustomInput
+          id="name"
+          label="Nombre"
+          value={petInfo.name}
+          register={register}
+          errors={errors}
         />
-        <div className="flex flex-col gap-3 mb-8">
-          <CustomInput
-            id="name"
-            label="Nombre"
-            value={petInfo.name}
-            register={register}
-            errors={errors}
-          />
-          <CustomSelect
-            id="breed"
-            label="Raza"
-            options={breeds}
-            register={register}
-            value={petInfo.breed_id}
-            errors={errors}
-          />
-          <CustomSelect
-            id="color"
-            label="Color"
-            options={colors}
-            register={register}
-            value={petInfo.color_id}
-            errors={errors}
-          />
-          <CustomTextArea
-            id="description"
-            label="Descripción"
-            value={petInfo.description}
-            register={register}
-            errors={errors}
-          />
-        </div>
+        <CustomSelect
+          id="breed"
+          label="Raza"
+          options={breeds}
+          register={register}
+          value={petInfo.breed_id}
+          errors={errors}
+        />
+        <CustomSelect
+          id="color"
+          label="Color"
+          options={colors}
+          register={register}
+          value={petInfo.color_id}
+          errors={errors}
+        />
+        <CustomTextArea
+          id="description"
+          label="Descripción"
+          value={petInfo.description}
+          register={register}
+          errors={errors}
+        />
+      </div>
 
-        <Button
-          type="submit"
-          color="primary"
-          className="w-full text-lg font-medium"
-          size="lg"
-        >
-          Guardar
-        </Button>
-      </form>
-    )
+      <Button
+        type="submit"
+        color="primary"
+        className="w-full text-lg font-medium"
+        size="lg"
+      >
+        Guardar
+      </Button>
+    </form>
+  ) : (
+    ''
   );
 }

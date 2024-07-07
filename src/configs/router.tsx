@@ -28,6 +28,8 @@ import EditPet from '../views/pages/EditPet';
 import EditPetLoader from '../lib/loaders/EditPetLoader';
 import LostPetMap from '../views/pages/LostPetMap';
 import PetQrScanner from '../views/pages/PetQrScanner';
+import Search from '../views/pages/Search';
+import SearchLoader from '../lib/loaders/SearchLoader';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,7 +44,7 @@ export const router = createBrowserRouter(
           <Route index path="/" element={<Home />} loader={HomeLoader} />
           <Route path="/stats" element={<Stats />} loader={StatsLoader} />
           <Route path="/pet-map" element={<LostPetMap />} />
-          <Route path="/search" element={<>Search a lost pet</>} />
+          <Route path="/search" element={<Search />} loader={SearchLoader} />
           <Route path="/search/qr" element={<PetQrScanner />} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/pet/:id" element={<Pet />} loader={PetLoader} />

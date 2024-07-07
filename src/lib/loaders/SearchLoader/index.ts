@@ -1,11 +1,13 @@
 import { getAllPosts } from '../../services/post.service';
 
-export default async function HomeLoader() {
+export default async function SearchLoader() {
   const postsResponse = await getAllPosts();
 
-  if (postsResponse.isError) return { posts: [] };
+  if (postsResponse.isError) return [];
 
   const rawPosts = postsResponse.response.data as ApiPost[];
+
+  console.log(rawPosts);
 
   const posts = rawPosts.sort((a, b) => {
     return (
@@ -13,5 +15,5 @@ export default async function HomeLoader() {
     );
   });
 
-  return { posts };
+  return posts;
 }
