@@ -19,11 +19,9 @@ export default function PetImage({
   bottomAction,
   bottomActionLabel,
 }: PetImageProps) {
-
-  const petImage = src ? src : '/img/pet-paw.jpg';
+  const petImage = src ? src : '/img/pets.png';
 
   return (
-
     <div
       className={`relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-lg ${className}`}
     >
