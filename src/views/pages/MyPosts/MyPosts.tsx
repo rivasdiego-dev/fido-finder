@@ -9,7 +9,6 @@ export default function MyPosts() {
     useEffect(() => {
         getMyPosts().then((response) => {
             if (response.isError) {
-                console.log(response.response);
                 return;
             }
             setData(response.response.data);

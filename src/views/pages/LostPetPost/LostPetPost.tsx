@@ -37,7 +37,6 @@ export default function LostPetPost() {
             setLastSeen(lastReport.date_seen);
             const coordinates = extractCoordinates(lastReport.geom);
             setLastReport(coordinates);
-            console.log(coordinates);
             setLoading(false);
         };
 

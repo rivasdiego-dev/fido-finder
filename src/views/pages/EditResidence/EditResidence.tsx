@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import InteractiveMapElement from "../../../components/atoms/InteractiveMapElement";
@@ -40,6 +40,18 @@ const EditResidence = () => {
     toast.success("Localización de residencia eliminada con éxito!", { id: "reporting" });
     navigate(`/profile`);
   }
+
+  useEffect(() => {
+    // Mostrar el primer mensaje de toast inmediatamente
+    toast.info("Para proteger tu información personal, no podemos mostrar la ubicación de residencia actual en el mapa. La ubicación mostrada es una representación predeterminada.", { id: "info", duration: 5000 });
+
+    // Utilizar setTimeout para mostrar el segundo mensaje después de un retraso
+    setTimeout(() => {
+      toast.info("Puedes hacer click en el mapa para ajustar tu ubicación de residencia.", { id: "info", duration: 5000 });
+    }, 5000); // Ajustar el retraso según sea necesario, aquí se usa 10000 ms (10 segundos) para coincidir con la duración del primer mensaje
+
+  }, []);
+
 
   return (
     <main className="flex-1 grid place-items-center">
