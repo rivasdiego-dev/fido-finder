@@ -8,7 +8,7 @@ import { isUUID } from "../../../lib/utils/isUUID";
 import "./PetQrScanner.css";
 
 const PetQrScanner = () => {
-    const scanner = useRef<QrScanner>();
+    const scanner = useRef<QrScanner | null>(null);
     const videoEl = useRef<HTMLVideoElement>(null);
     const qrBoxEl = useRef<HTMLDivElement>(null);
     const [qrOn, setQrOn] = useState<boolean>(true);
@@ -22,7 +22,9 @@ const PetQrScanner = () => {
             toast.error("El código QR no corresponde a ninguna mascota.", { id: "invalid-qr" });
             return;
         }
-        if (!videoEl?.current) scanner?.current?.stop();
+        if (scanner.current) {
+            scanner.current.stop();
+        }
         setScannedResult(result.data);
         navigate(`/pet/${result.data}`);
     };
@@ -32,35 +34,38 @@ const PetQrScanner = () => {
     };
 
     useEffect(() => {
-        if (videoEl?.current && !scanner.current) {
-            scanner.current = new QrScanner(videoEl?.current, onScanSuccess, {
+        if (videoEl.current && !scanner.current) {
+            scanner.current = new QrScanner(videoEl.current, onScanSuccess, {
                 onDecodeError: onScanFail,
                 preferredCamera: "environment",
                 highlightScanRegion: true,
                 highlightCodeOutline: true,
-                overlay: qrBoxEl?.current || undefined,
+                overlay: qrBoxEl.current || undefined,
             });
 
-            scanner?.current
-                ?.start()
+            scanner.current
+                .start()
                 .then(() => setQrOn(true))
                 .catch((err) => {
-                    if (err) setQrOn(false);
+                    console.error(err);
+                    setQrOn(false);
                 });
         }
 
         return () => {
-            if (!videoEl?.current) {
-                scanner?.current?.stop();
+            if (scanner.current) {
+                scanner.current.stop();
+                scanner.current = null;
             }
         };
     }, []);
 
     useEffect(() => {
-        if (!qrOn)
+        if (!qrOn) {
             toast.error(
                 "Parece que no tenemos permisos para acceder a la cámara. Por favor, permite el acceso a la cámara y recarga la página."
             );
+        }
     }, [qrOn]);
 
     return (
