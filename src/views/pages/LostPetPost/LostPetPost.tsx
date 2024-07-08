@@ -148,7 +148,7 @@ export default function LostPetPost() {
             ]}
           />
 
-          {data.author_id !== user?.id && !data.is_lost && (
+          {data.author_id !== user?.id || !data.is_lost && (
             <div className="flex gap-2">
               <Link to={`/post/${data.id}/report`}>
                 <Button size="lg" color="primary" variant="flat">
