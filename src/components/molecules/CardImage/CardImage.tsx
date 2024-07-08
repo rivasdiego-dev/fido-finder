@@ -9,6 +9,7 @@ type CardImageProps = {
   userId: string;
   user: string;
   date: string;
+  is_lost: boolean;
   location: string;
   petImg: string;
   petName: string;
@@ -17,7 +18,7 @@ type CardImageProps = {
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { avatarUrl, user, date, location, petImg, petName, postId, petId, userId } = props;
+  const { avatarUrl, user, date, location, petImg, petName, postId, petId, userId, is_lost } = props;
   const userData = useUserStore((state) => state.user);
 
 
@@ -70,7 +71,7 @@ const CardImage = (props: CardImageProps) => {
             </Button>
           </Link>
           {
-            userData?.id !== userId &&
+            userData?.id !== userId && is_lost &&
             <Link to={`/post/${postId}/report`} className='w-full'>
               <Button
                 color="primary"

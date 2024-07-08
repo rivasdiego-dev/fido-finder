@@ -29,6 +29,7 @@ const Home = () => {
 
             return (
               <CardImage
+                is_lost={post.is_lost}
                 key={id}
                 avatarUrl={finalImg}
                 userId={users.id}
