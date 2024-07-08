@@ -2,7 +2,8 @@ import { useState } from 'react';
 import CardImage from '../../../components/molecules/CardImage';
 import NotRegistered from '../../../components/molecules/NotRegistered';
 import { useLoaderData } from 'react-router-dom';
-import formatDateTime from '../../../lib/utils/formatDateTime';
+// import formatDateTime from '../../../lib/utils/formatDateTime';
+import { format, parse } from '@formkit/tempo';
 
 const Home = () => {
   // const posts: ApiPost[] = [];
@@ -21,7 +22,11 @@ const Home = () => {
             const finalLocation = locationInfo.community
               ? locationInfo.community
               : locationInfo.mun;
-            const finalDate = formatDateTime(lost_datetime);
+            const finalDate = format(
+              parse(lost_datetime),
+              'DD MMMM, YYYY - h:mm A',
+              'es'
+            );
 
             return (
               <CardImage

@@ -2,24 +2,26 @@ import {
   Button,
   Popover,
   PopoverContent,
-  PopoverTrigger
+  PopoverTrigger,
 } from '@nextui-org/react';
+import { IconMapPin } from '@tabler/icons-react';
 
 type UserDetailsProps = {
   name: string;
   email: string;
+  location: string;
   img: string | null;
   phone: string | null;
 };
 
 const UserDetails = (props: UserDetailsProps) => {
-  const { name, email, phone, img } = props;
+  const { name, email, phone, img, location } = props;
 
   return (
     <div className="relative flex font-roboto-condensed flex-col justify-center items-center gap-4 w-full px-4 pb-4 mt-12 bg-b-base-foreground rounded-xl">
       <div className="absolute flex justify-center items-center p-1 bg-white rounded-full -translate-y-20">
         <img
-          src={img ? img : 'img/lost-dog.jpg'}
+          src={img ? img : 'img/owner.png'}
           alt="User"
           className="h-[5rem] w-[5rem] rounded-full object-cover"
         />
@@ -30,9 +32,8 @@ const UserDetails = (props: UserDetailsProps) => {
           {name}
         </p>
         <div className="flex gap-1 justify-center items-center">
-          <img src="img/Map Pin.png" alt="location" className="w-4 h-4" />
-          {/* TODO: Add residence */}
-          <p>San Salvador, Mejicanos</p>
+          <IconMapPin size={14} />
+          {location ? <p>{location}</p> : <p>N/D</p>}
         </div>
       </div>
       <div className="flex justify-evenly w-9/12">

@@ -22,7 +22,7 @@ const CardImage = (props: CardImageProps) => {
       {/* Label */}
       <div className="flex gap-2">
         <img
-          src={avatarUrl}
+          src={avatarUrl ? avatarUrl : 'img/user.png'}
           alt="User"
           className="w-10 h-10 object-cover rounded-full"
         />

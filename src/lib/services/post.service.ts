@@ -93,3 +93,15 @@ export async function createSeenReport(postId: string, data: { lat: number, lon:
         return { response: error, isError: true }
     }
 }
+
+export async function deletePost(postId: string): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.delete("posts/"  + postId)
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
