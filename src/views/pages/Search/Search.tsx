@@ -46,7 +46,7 @@ const Search = () => {
       </div>
 
       {posts.map((post) => {
-        const { id, pets, locationInfo } = post;
+        const { id, pets, locationInfo, author_id } = post;
 
         return (
           <SearchCard
@@ -58,6 +58,7 @@ const Search = () => {
             }
             breed={pets.breeds.breed}
             color={pets.colors.color}
+            author_id={author_id}
             postId={id}
           />
         );

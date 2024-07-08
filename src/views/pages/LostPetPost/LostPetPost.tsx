@@ -116,24 +116,24 @@ export default function LostPetPost() {
               },
             ]}
           />
-          <div className="flex gap-2">
-            <Link to={`/post/${data.id}/report`}>
-              <Button size="lg" color="primary" variant="flat">
-                Reportar
-              </Button>
-            </Link>
 
-            {
-              data.author_id !== user?.id &&
-              (
+          {
+            data.author_id !== user?.id &&
+            (
+              <div className="flex gap-2">
+                <Link to={`/post/${data.id}/report`}>
+                  <Button size="lg" color="primary" variant="flat">
+                    Reportar
+                  </Button>
+                </Link>
                 <Link to={`/profile/${data.author_id}`}>
                   <Button size="lg" color="primary" fullWidth>
                     Contactar dueño
                   </Button>
                 </Link>
-              )
-            }
-          </div>
+              </div>
+            )
+          }
         </div>
       )}
 

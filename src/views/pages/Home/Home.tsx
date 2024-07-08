@@ -14,7 +14,6 @@ const Home = () => {
     <main className="relative">
       {isRegistered ? (
         <div className="px-5 flex flex-col gap-4 overflow-y-scroll">
-          {/* TODO: Change default image */}
           {posts.map((post) => {
             const { id, users, pets, locationInfo, lost_datetime } = post;
 

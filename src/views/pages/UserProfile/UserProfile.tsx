@@ -3,12 +3,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getOneUser } from '../../../lib/services/users.service';
 import UserDetails from '../../../components/molecules/UserDetails';
 import PetImage from '../../../components/atoms/PetImage';
+import NotFound from '../NotFound';
+import Loader from '../Loader';
 
 export default function UserProfile() {
 
     const id = useParams().id as string;
     const navigate = useNavigate();
     const [user, setUser] = useState<ApiUser | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getOneUser(id).then((response) => {
@@ -17,14 +20,16 @@ export default function UserProfile() {
                 return;
             }
             setUser(response.response.data);
+        }).finally(() => {
+            setLoading(false);
         });
     }, [id]);
 
-    // if (!user) return <NotFound />
-    if (!user) return <></>
+    if (loading) return <Loader />
+    if (!user && !loading || !user) return <NotFound />
 
     return (
-        <div>
+        <div className='px-3'>
             <UserDetails
                 name={`${user.name} ${user.lastname}`}
                 email={user.email}

@@ -18,6 +18,7 @@ import AddPet from '../views/pages/AddPet';
 import EditPet from '../views/pages/EditPet';
 import EditResidence from '../views/pages/EditResidence';
 import EditUser from '../views/pages/EditUser';
+import ErrorPage from '../views/pages/ErrorPage';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import LostPetMap from '../views/pages/LostPetMap';
@@ -36,7 +37,7 @@ import VerifyToken from '../views/pages/VerifyToken';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route errorElement={<div> const error = useRouteError(); Error </div>}>
+    <Route errorElement={<ErrorPage />}>
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="auth/verify" element={<VerifyToken />} />
