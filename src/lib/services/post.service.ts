@@ -94,9 +94,26 @@ export async function createSeenReport(postId: string, data: { lat: number, lon:
     }
 }
 
+export async function markPostAsFound(postId: string): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.patch("posts/" + postId, {
+            "found_in": {
+                "lon": -89.25435030989743,
+                "lat": 13.671725961057984
+            }
+        })
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
+
 export async function deletePost(postId: string): Promise<AxiosCustomResponse> {
     try {
-        const res = await axiosInstance.delete("posts/"  + postId)
+        const res = await axiosInstance.delete("posts/" + postId)
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);
