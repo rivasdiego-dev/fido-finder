@@ -19,9 +19,9 @@ export default function MyPosts() {
   return (
     <div>
       <div className="px-5 flex flex-col gap-4 overflow-y-scroll">
-        <p className="font-quicksand font-bold text-xl text-b-base-text">
+        <h1 className="font-quicksand text-3xl font-medium text-center mb-4 px-5">
           Mis publicaciones
-        </p>
+        </h1>
         {data.map((post) => (
           <Card
             key={post.id}
@@ -29,7 +29,7 @@ export default function MyPosts() {
             radius="lg"
             className="border-none"
           >
-            <div className="relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-lg">
+            <div className="relative w-auto min-h-[250px] max-h-[250px] h-[250px] flex justify-center items-center overflow-hidden rounded-t-lg">
               <img
                 src={post.pets.img}
                 alt={post.pets.name}
@@ -52,6 +52,7 @@ export default function MyPosts() {
                 </div>
               </div>
             </div>
+            <p className='p-2 font-roboto w-full text-center'> {post.is_lost ? 'Perdido' : 'Encontrado'}</p>
           </Card>
         ))}
       </div>

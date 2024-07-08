@@ -7,6 +7,7 @@ import MapComponent from "../../../components/molecules/MapComponent";
 import {
   deletePost,
   getPostSeenReports,
+  markPostAsFound,
 } from "../../../lib/services/post.service";
 import extractCoordinates from "../../../lib/utils/extractCoordinates";
 import { toast } from "sonner";
@@ -19,8 +20,8 @@ export default function LostPetPost() {
   const [lastSeen, setLastSeen] = useState<string>(new Date().toISOString());
   const [loading, setLoading] = useState(true);
   const [lastReport, setLastReport] = useState<{ lat: number; lng: number }>({
-    lat: 0,
-    lng: 0,
+    lat: 13.70126931473921,
+    lng: -89.22451972961427,
   });
 
   useEffect(() => {
@@ -73,7 +74,22 @@ export default function LostPetPost() {
       toast.error("Error deleting post");
       return;
     }
-    toast.success("post has been deleted");
+    toast.success("Post has been deleted");
+    navigate("/profile");
+  };
+
+  const handleMarkAsFound = async () => {
+    if (!data) return;
+
+    setLoading(true);
+    const res = await markPostAsFound(data.id);
+
+    setLoading(false);
+    if (res.isError) {
+      toast.error("Error al marcar como encontrado");
+      return;
+    }
+    toast.success("Post marcado como encontrado!");
     navigate("/profile");
   };
 
@@ -86,6 +102,21 @@ export default function LostPetPost() {
           description={`${pet.breeds.breed} ${pet.colors.color}`}
           petName={pet.name}
         />
+        {data.is_lost && user?.id === data.author_id ? (
+          <Button
+            fullWidth
+            variant="flat"
+            color="success"
+            onClick={handleMarkAsFound}
+            className="text-white font-medium tracking-widest"
+          >
+            Marcar como encontrado
+          </Button>
+        ) : (
+          <p className="font-quicksand font-bold text-4xl text-success w-full text-center">
+            Encontrado
+          </p>
+        )}
         <p className="font-roboto-condensed text-lg">{data.details}</p>
       </div>
 
@@ -116,17 +147,21 @@ export default function LostPetPost() {
               },
             ]}
           />
-          <div className="flex gap-2">
-            <Link to={`/post/${data.id}/report`}>
-              <Button size="lg" color="primary" variant="flat">
-                Reportar
-              </Button>
-            </Link>
 
-            <Button size="lg" color="primary" fullWidth>
-              Contactar dueño
-            </Button>
-          </div>
+          {data.author_id !== user?.id || !data.is_lost && (
+            <div className="flex gap-2">
+              <Link to={`/post/${data.id}/report`}>
+                <Button size="lg" color="primary" variant="flat">
+                  Reportar
+                </Button>
+              </Link>
+              <Link to={`/profile/${data.author_id}`}>
+                <Button size="lg" color="primary" fullWidth>
+                  Contactar dueño
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       )}
 

@@ -18,6 +18,7 @@ import AddPet from '../views/pages/AddPet';
 import EditPet from '../views/pages/EditPet';
 import EditResidence from '../views/pages/EditResidence';
 import EditUser from '../views/pages/EditUser';
+import ErrorPage from '../views/pages/ErrorPage';
 import Home from '../views/pages/Home';
 import Login from '../views/pages/Login';
 import LostPetMap from '../views/pages/LostPetMap';
@@ -31,11 +32,12 @@ import ReportPet from '../views/pages/ReportPet';
 import Search from '../views/pages/Search';
 import Stats from '../views/pages/Stats';
 import User from '../views/pages/User';
+import UserProfile from '../views/pages/UserProfile';
 import VerifyToken from '../views/pages/VerifyToken';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route errorElement={<div> const error = useRouteError(); Error </div>}>
+    <Route errorElement={<ErrorPage />}>
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="auth/verify" element={<VerifyToken />} />
@@ -56,6 +58,10 @@ export const router = createBrowserRouter(
             loader={EditPetLoader}
           />
           <Route path="/profile" element={<User />} />
+          <Route
+            path="/profile/:id"
+            element={<UserProfile />}
+          />
           <Route path="/profile/edit" element={<EditUser />} />
           <Route path="/profile/edit/residence" element={<EditResidence />} />
           <Route

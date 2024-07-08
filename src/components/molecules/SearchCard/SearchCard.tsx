@@ -1,8 +1,10 @@
 import { Button } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
+import { useUserStore } from '../../../lib/store/user';
 
 type SearchCardProps = {
   postId: string;
+  author_id: string;
   name: string;
   location: string;
   img: string;
@@ -11,7 +13,9 @@ type SearchCardProps = {
 };
 
 const SearchCard = (props: SearchCardProps) => {
-  const { postId, name, location, breed, img, color } = props;
+  const { postId, name, location, breed, img, color, author_id } = props;
+  const user = useUserStore((state) => state.user)
+
   return (
     <div className="flex p-2 rounded-xl gap-2 bg-b-base-foreground font-roboto-condensed">
       <div className="w-28 h-28">
@@ -36,11 +40,14 @@ const SearchCard = (props: SearchCardProps) => {
         </div>
 
         <div className="flex justify-center items-center gap-2">
-          <Link to={`/post/${postId}/report`} className="w-full">
-            <Button color="primary" fullWidth radius="sm" variant="solid">
-              Reportar
-            </Button>
-          </Link>
+          {
+            author_id !== user?.id &&
+            <Link to={`/post/${postId}/report`} className="w-full">
+              <Button color="primary" fullWidth radius="sm" variant="solid">
+                Reportar
+              </Button>
+            </Link>
+          }
           <Link to={`/post/${postId}`} className="w-full">
             <Button color="primary" fullWidth radius="sm" variant="flat">
               Ver

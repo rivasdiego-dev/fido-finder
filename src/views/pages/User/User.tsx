@@ -25,8 +25,6 @@ const User = () => {
 
   useEffect(() => {
     handleInfo();
-
-    console.log(user);
   }, []);
 
   return (
