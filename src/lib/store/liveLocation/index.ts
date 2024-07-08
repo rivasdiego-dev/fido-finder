@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import Cookies from "js-cookie";
+import { setUsersLocation } from "../../services/users.service";
 
 interface LiveLocationState {
   tracking: boolean;
@@ -31,7 +32,22 @@ export const useLiveLocationStore = create<LiveLocationState>()(
       tracking: false,
       lat: null,
       lon: null,
-      startTracking: () => set({ tracking: true }),
+      startTracking: () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const { latitude, longitude } = position.coords;
+              setUsersLocation({ lat: latitude, lon: longitude })
+              set({ tracking: true, lat: latitude, lon: longitude, });
+            },
+            (error) => {
+              console.error("Error getting location:", error);
+            }
+          );
+        } else {
+          console.error("Geolocation is not supported by this browser.");
+        }
+      },
       stopTracking: () => set({ tracking: false }),
       setLiveLocation: (latitude, longitude) =>
         set({ lat: latitude, lon: longitude }),
