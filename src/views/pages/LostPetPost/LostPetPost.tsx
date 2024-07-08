@@ -102,7 +102,7 @@ export default function LostPetPost() {
           description={`${pet.breeds.breed} ${pet.colors.color}`}
           petName={pet.name}
         />
-        {data.is_lost && user?.id === data.author_id ? (
+        {data.is_lost && user?.id === data.author_id && (
           <Button
             fullWidth
             variant="flat"
@@ -112,7 +112,7 @@ export default function LostPetPost() {
           >
             Marcar como encontrado
           </Button>
-        ) : (
+        )}{!data.is_lost && (
           <p className="font-quicksand font-bold text-4xl text-success w-full text-center">
             Encontrado
           </p>
