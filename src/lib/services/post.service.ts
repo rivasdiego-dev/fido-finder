@@ -58,9 +58,45 @@ type createPostBody = {
     };
 }
 
+export async function getPostsAround(lat: number, lon: number): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.post("posts/around-me", { lat, lon })
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
+
 export async function createPost(data: createPostBody): Promise<AxiosCustomResponse> {
     try {
         const res = await axiosInstance.post("posts", data)
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
+
+export async function createSeenReport(postId: string, data: { lat: number, lon: number }): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.post("posts/" + postId + "/seen-reports", data)
+        return { response: res, isError: false }
+    } catch (error) {
+        console.warn(error);
+        if (error instanceof AxiosError)
+            return { response: error.response, isError: true }
+        return { response: error, isError: true }
+    }
+}
+
+export async function deletePost(postId: string): Promise<AxiosCustomResponse> {
+    try {
+        const res = await axiosInstance.delete("posts/"  + postId)
         return { response: res, isError: false }
     } catch (error) {
         console.warn(error);

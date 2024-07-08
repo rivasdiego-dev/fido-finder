@@ -15,7 +15,7 @@ export async function getLostPetAmountsByDepartments(): Promise<AxiosCustomRespo
 }
 
 // Map
-export async function getLostPetsByOneDepartment(departmentId: number): Promise<AxiosCustomResponse> {
+export async function getLostPetsByOneDepartment(departmentId: string): Promise<AxiosCustomResponse> {
     try {
         const res = await axiosInstance.get(`stats/lost-pets/departments/${departmentId}`)
         return { response: res, isError: false }
@@ -41,7 +41,7 @@ export async function getLostPetAmountsByMunicipalities(): Promise<AxiosCustomRe
 }
 
 // Map
-export async function getLostPetsByOneMunicipality(municipalityId: number): Promise<AxiosCustomResponse> {
+export async function getLostPetsByOneMunicipality(municipalityId: string): Promise<AxiosCustomResponse> {
     try {
         const res = await axiosInstance.get(`stats/lost-pets/municipalities/${municipalityId}`)
         return { response: res, isError: false }

@@ -1,0 +1,58 @@
+[
+    {
+        "nom_dpto": "CABAÑAS",
+        "cod_dpto": "09"
+    },
+    {
+        "nom_dpto": "SAN VICENTE",
+        "cod_dpto": "10"
+    },
+    {
+        "nom_dpto": "USULUTAN",
+        "cod_dpto": "11"
+    },
+    {
+        "nom_dpto": "SAN MIGUEL",
+        "cod_dpto": "12"
+    },
+    {
+        "nom_dpto": "MORAZAN",
+        "cod_dpto": "13"
+    },
+    {
+        "nom_dpto": "LA UNION",
+        "cod_dpto": "14"
+    },
+    {
+        "nom_dpto": "AHUACHAPAN",
+        "cod_dpto": "01"
+    },
+    {
+        "nom_dpto": "SONSONATE",
+        "cod_dpto": "03"
+    },
+    {
+        "nom_dpto": "LA LIBERTAD",
+        "cod_dpto": "05"
+    },
+    {
+        "nom_dpto": "SANTA ANA",
+        "cod_dpto": "02"
+    },
+    {
+        "nom_dpto": "SAN SALVADOR",
+        "cod_dpto": "06"
+    },
+    {
+        "nom_dpto": "CUSCATLAN",
+        "cod_dpto": "07"
+    },
+    {
+        "nom_dpto": "LA PAZ",
+        "cod_dpto": "08"
+    },
+    {
+        "nom_dpto": "CHALATENANGO",
+        "cod_dpto": "04"
+    }
+]

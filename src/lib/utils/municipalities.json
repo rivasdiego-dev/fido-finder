@@ -1,0 +1,1086 @@
+[
+    {
+        "nom_mun": "NUEVA CONCEPCION",
+        "id": "01"
+    },
+    {
+        "nom_mun": "AGUA CALIENTE",
+        "id": "02"
+    },
+    {
+        "nom_mun": "LA PALMA",
+        "id": "03"
+    },
+    {
+        "nom_mun": "SAN IGNACIO",
+        "id": "04"
+    },
+    {
+        "nom_mun": "CITALA",
+        "id": "05"
+    },
+    {
+        "nom_mun": "SAN FERNANDO",
+        "id": "06"
+    },
+    {
+        "nom_mun": "LA REINA",
+        "id": "07"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO MORAZAN",
+        "id": "08"
+    },
+    {
+        "nom_mun": "TEJUTLA",
+        "id": "09"
+    },
+    {
+        "nom_mun": "DULCE NOMBRE DE MARIA",
+        "id": "10"
+    },
+    {
+        "nom_mun": "EL PARAISO",
+        "id": "11"
+    },
+    {
+        "nom_mun": "SAN RAFAEL",
+        "id": "12"
+    },
+    {
+        "nom_mun": "SANTA RITA",
+        "id": "13"
+    },
+    {
+        "nom_mun": "SAN ISIDRO LABRADOR",
+        "id": "19"
+    },
+    {
+        "nom_mun": "SAN ANTONIO LOS RANCHOS",
+        "id": "23"
+    },
+    {
+        "nom_mun": "AZACUALPA",
+        "id": "24"
+    },
+    {
+        "nom_mun": "CONCEPCION QUEZALTEPEQUE",
+        "id": "14"
+    },
+    {
+        "nom_mun": "CHALATENANGO",
+        "id": "15"
+    },
+    {
+        "nom_mun": "NUEVA TRINIDAD",
+        "id": "16"
+    },
+    {
+        "nom_mun": "LAS VUELTAS",
+        "id": "17"
+    },
+    {
+        "nom_mun": "OJOS DE AGUA",
+        "id": "18"
+    },
+    {
+        "nom_mun": "CANCASQUE",
+        "id": "20"
+    },
+    {
+        "nom_mun": "POTONICO",
+        "id": "21"
+    },
+    {
+        "nom_mun": "SAN MIGUEL DE MERCEDES",
+        "id": "22"
+    },
+    {
+        "nom_mun": "SAN LUIS DEL CARMEN",
+        "id": "25"
+    },
+    {
+        "nom_mun": "METAPAN",
+        "id": "26"
+    },
+    {
+        "nom_mun": "GUADALUPE",
+        "id": "46"
+    },
+    {
+        "nom_mun": "TECOLUCA",
+        "id": "47"
+    },
+    {
+        "nom_mun": "SAN ILDEFONSO",
+        "id": "48"
+    },
+    {
+        "nom_mun": "SAN ANTONIO PAJONAL",
+        "id": "27"
+    },
+    {
+        "nom_mun": "SANTIAGO DE LA FRONTERA",
+        "id": "28"
+    },
+    {
+        "nom_mun": "JUCUAPA",
+        "id": "56"
+    },
+    {
+        "nom_mun": "SANTA ROSA GUACHIPILIN",
+        "id": "29"
+    },
+    {
+        "nom_mun": "MASAHUAT",
+        "id": "30"
+    },
+    {
+        "nom_mun": "TEXISTEPEQUE",
+        "id": "31"
+    },
+    {
+        "nom_mun": "CANDELARIA DE LA FRONTERA",
+        "id": "32"
+    },
+    {
+        "nom_mun": "SANTA ANA",
+        "id": "33"
+    },
+    {
+        "nom_mun": "COATEPEQUE",
+        "id": "34"
+    },
+    {
+        "nom_mun": "EL PORVENIR",
+        "id": "35"
+    },
+    {
+        "nom_mun": "SAN CRISTOBAL",
+        "id": "78"
+    },
+    {
+        "nom_mun": "SAN SEBASTIAN SALITRILLO",
+        "id": "36"
+    },
+    {
+        "nom_mun": "CHALCHUAPA",
+        "id": "37"
+    },
+    {
+        "nom_mun": "EL CONGO",
+        "id": "38"
+    },
+    {
+        "nom_mun": "APASTEPEQUE",
+        "id": "39"
+    },
+    {
+        "nom_mun": "SAN SEBASTIAN",
+        "id": "40"
+    },
+    {
+        "nom_mun": "SAN ANTONIO MASAHUAT",
+        "id": "86"
+    },
+    {
+        "nom_mun": "TAPALHUACA",
+        "id": "87"
+    },
+    {
+        "nom_mun": "CUYULTITAN",
+        "id": "88"
+    },
+    {
+        "nom_mun": "VERAPAZ",
+        "id": "41"
+    },
+    {
+        "nom_mun": "SANTO DOMINGO",
+        "id": "42"
+    },
+    {
+        "nom_mun": "SAN LORENZO",
+        "id": "43"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO CHINAMECA",
+        "id": "89"
+    },
+    {
+        "nom_mun": "SAN JUAN TEPEZONTES",
+        "id": "90"
+    },
+    {
+        "nom_mun": "SANTIAGO NONUALCO",
+        "id": "91"
+    },
+    {
+        "nom_mun": "SAN PEDRO MASAHUAT",
+        "id": "92"
+    },
+    {
+        "nom_mun": "SAN JUAN NONUALCO",
+        "id": "93"
+    },
+    {
+        "nom_mun": "ZACATECOLUCA",
+        "id": "94"
+    },
+    {
+        "nom_mun": "SAN RAFAEL OBRAJUELO",
+        "id": "95"
+    },
+    {
+        "nom_mun": "SAN LUIS LA HERRADURA",
+        "id": "96"
+    },
+    {
+        "nom_mun": "SAN PEDRO NONUALCO",
+        "id": "97"
+    },
+    {
+        "nom_mun": "SANTA MARIA OSTUMA",
+        "id": "98"
+    },
+    {
+        "nom_mun": "TEPETITAN",
+        "id": "44"
+    },
+    {
+        "nom_mun": "SAN CAYETANO ISTEPEQUE",
+        "id": "45"
+    },
+    {
+        "nom_mun": "PARAISO DE OSORIO",
+        "id": "99"
+    },
+    {
+        "nom_mun": "ESTANZUELAS",
+        "id": "49"
+    },
+    {
+        "nom_mun": "SAN AGUSTIN",
+        "id": "50"
+    },
+    {
+        "nom_mun": "BERLIN",
+        "id": "51"
+    },
+    {
+        "nom_mun": "NUEVA GRANADA",
+        "id": "52"
+    },
+    {
+        "nom_mun": "EL TRIUNFO",
+        "id": "53"
+    },
+    {
+        "nom_mun": "SAN BUENA VENTURA",
+        "id": "54"
+    },
+    {
+        "nom_mun": "SANTIAGO DE MARIA",
+        "id": "55"
+    },
+    {
+        "nom_mun": "ALEGRIA",
+        "id": "57"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO LEMPA",
+        "id": "58"
+    },
+    {
+        "nom_mun": "SAN ANTONIO DE LA CRUZ",
+        "id": "59"
+    },
+    {
+        "nom_mun": "NOMBRE DE JESUS",
+        "id": "60"
+    },
+    {
+        "nom_mun": "LAS FLORES",
+        "id": "61"
+    },
+    {
+        "nom_mun": "ARCATAO",
+        "id": "62"
+    },
+    {
+        "nom_mun": "COMALAPA",
+        "id": "63"
+    },
+    {
+        "nom_mun": "LA LAGUNA",
+        "id": "64"
+    },
+    {
+        "nom_mun": "EL CARRIZAL",
+        "id": "65"
+    },
+    {
+        "nom_mun": "SUCHITOTO",
+        "id": "66"
+    },
+    {
+        "nom_mun": "TENANCINGO",
+        "id": "67"
+    },
+    {
+        "nom_mun": "SAN JOSE GUAYABAL",
+        "id": "68"
+    },
+    {
+        "nom_mun": "ORATORIO DE CONCEPCION",
+        "id": "69"
+    },
+    {
+        "nom_mun": "LOLOTIQUILLO",
+        "id": "115"
+    },
+    {
+        "nom_mun": "SAN BARTOLOME PERULAPIA",
+        "id": "70"
+    },
+    {
+        "nom_mun": "SAN PEDRO PERULAPAN",
+        "id": "71"
+    },
+    {
+        "nom_mun": "SANTA CRUZ MICHAPA",
+        "id": "72"
+    },
+    {
+        "nom_mun": "MONTE SAN JUAN",
+        "id": "73"
+    },
+    {
+        "nom_mun": "EL ROSARIO",
+        "id": "74"
+    },
+    {
+        "nom_mun": "SAN RAFAEL CEDROS",
+        "id": "75"
+    },
+    {
+        "nom_mun": "COJUTEPEQUE",
+        "id": "76"
+    },
+    {
+        "nom_mun": "EL CARMEN",
+        "id": "77"
+    },
+    {
+        "nom_mun": "CANDELARIA",
+        "id": "79"
+    },
+    {
+        "nom_mun": "SAN RAMON",
+        "id": "80"
+    },
+    {
+        "nom_mun": "SANTA CRUZ ANALQUITO",
+        "id": "81"
+    },
+    {
+        "nom_mun": "SAN LUIS TALPA",
+        "id": "82"
+    },
+    {
+        "nom_mun": "OLOCUILTA",
+        "id": "83"
+    },
+    {
+        "nom_mun": "SAN JUAN TALPA",
+        "id": "84"
+    },
+    {
+        "nom_mun": "EL ROSARIO",
+        "id": "85"
+    },
+    {
+        "nom_mun": "SAN EMIGDIO",
+        "id": "100"
+    },
+    {
+        "nom_mun": "SAN MIGUEL TEPEZONTES",
+        "id": "101"
+    },
+    {
+        "nom_mun": "JERUSALEN",
+        "id": "102"
+    },
+    {
+        "nom_mun": "MERCEDES LA CEIBA",
+        "id": "103"
+    },
+    {
+        "nom_mun": "ILOBASCO",
+        "id": "104"
+    },
+    {
+        "nom_mun": "SAN ISIDRO",
+        "id": "105"
+    },
+    {
+        "nom_mun": "JUTIAPA",
+        "id": "106"
+    },
+    {
+        "nom_mun": "TEJUTEPEQUE",
+        "id": "107"
+    },
+    {
+        "nom_mun": "CINQUERA",
+        "id": "108"
+    },
+    {
+        "nom_mun": "SENSUNTEPEQUE",
+        "id": "109"
+    },
+    {
+        "nom_mun": "VICTORIA",
+        "id": "110"
+    },
+    {
+        "nom_mun": "GUACOTECTI",
+        "id": "111"
+    },
+    {
+        "nom_mun": "SANTA CLARA",
+        "id": "112"
+    },
+    {
+        "nom_mun": "SAN ESTEBAN CATARINA",
+        "id": "113"
+    },
+    {
+        "nom_mun": "SAN VICENTE",
+        "id": "114"
+    },
+    {
+        "nom_mun": "CHILANGA",
+        "id": "116"
+    },
+    {
+        "nom_mun": "GUATAJIAGUA",
+        "id": "117"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO GOTERA",
+        "id": "118"
+    },
+    {
+        "nom_mun": "SENSEMBRA",
+        "id": "119"
+    },
+    {
+        "nom_mun": "YAMABAL",
+        "id": "120"
+    },
+    {
+        "nom_mun": "SAN CARLOS",
+        "id": "121"
+    },
+    {
+        "nom_mun": "SANTA ELENA",
+        "id": "144"
+    },
+    {
+        "nom_mun": "EL DIVISADERO",
+        "id": "122"
+    },
+    {
+        "nom_mun": "JOCORO",
+        "id": "123"
+    },
+    {
+        "nom_mun": "CORINTO",
+        "id": "124"
+    },
+    {
+        "nom_mun": "SAN ALEJO",
+        "id": "125"
+    },
+    {
+        "nom_mun": "PASAQUINA",
+        "id": "126"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO JAVIER",
+        "id": "145"
+    },
+    {
+        "nom_mun": "TECAPAN",
+        "id": "146"
+    },
+    {
+        "nom_mun": "SANTA ROSA DE LIMA",
+        "id": "127"
+    },
+    {
+        "nom_mun": "EL SAUCE",
+        "id": "128"
+    },
+    {
+        "nom_mun": "CALIFORNIA",
+        "id": "147"
+    },
+    {
+        "nom_mun": "ANAMOROS",
+        "id": "129"
+    },
+    {
+        "nom_mun": "CONCHAGUA",
+        "id": "130"
+    },
+    {
+        "nom_mun": "INTIPUCA",
+        "id": "131"
+    },
+    {
+        "nom_mun": "NUEVA ESPARTA",
+        "id": "132"
+    },
+    {
+        "nom_mun": "LISLIQUE",
+        "id": "133"
+    },
+    {
+        "nom_mun": "POLOROS",
+        "id": "134"
+    },
+    {
+        "nom_mun": "CONCEPCION DE ORIENTE",
+        "id": "135"
+    },
+    {
+        "nom_mun": "SAN DIONISIO",
+        "id": "153"
+    },
+    {
+        "nom_mun": "YUCUAIQUIN",
+        "id": "136"
+    },
+    {
+        "nom_mun": "BOLIVAR",
+        "id": "137"
+    },
+    {
+        "nom_mun": "SAN JOSE",
+        "id": "138"
+    },
+    {
+        "nom_mun": "PUERTO EL TRIUNFO",
+        "id": "154"
+    },
+    {
+        "nom_mun": "JUCUARAN",
+        "id": "155"
+    },
+    {
+        "nom_mun": "SESORI",
+        "id": "156"
+    },
+    {
+        "nom_mun": "YAYANTIQUE",
+        "id": "139"
+    },
+    {
+        "nom_mun": "QUELEPA",
+        "id": "170"
+    },
+    {
+        "nom_mun": "SAN MIGUEL",
+        "id": "171"
+    },
+    {
+        "nom_mun": "EL CARMEN",
+        "id": "140"
+    },
+    {
+        "nom_mun": "LA UNION",
+        "id": "141"
+    },
+    {
+        "nom_mun": "MEANGUERA DEL GOLFO",
+        "id": "142"
+    },
+    {
+        "nom_mun": "JIQUILISCO",
+        "id": "143"
+    },
+    {
+        "nom_mun": "OZATLAN",
+        "id": "148"
+    },
+    {
+        "nom_mun": "SANTA MARIA",
+        "id": "149"
+    },
+    {
+        "nom_mun": "SAN RAFAEL ORIENTE",
+        "id": "172"
+    },
+    {
+        "nom_mun": "EL TRANSITO",
+        "id": "173"
+    },
+    {
+        "nom_mun": "CHIRILAGUA",
+        "id": "174"
+    },
+    {
+        "nom_mun": "EREGUAYQUIN",
+        "id": "150"
+    },
+    {
+        "nom_mun": "USULUTAN",
+        "id": "151"
+    },
+    {
+        "nom_mun": "CONCEPCION BATRES",
+        "id": "152"
+    },
+    {
+        "nom_mun": "NUEVO EDEN DE SAN JUAN",
+        "id": "157"
+    },
+    {
+        "nom_mun": "DOLORES",
+        "id": "158"
+    },
+    {
+        "nom_mun": "SAN GERARDO",
+        "id": "159"
+    },
+    {
+        "nom_mun": "ULUAZAPA",
+        "id": "175"
+    },
+    {
+        "nom_mun": "SAN LUIS DE LA REINA",
+        "id": "160"
+    },
+    {
+        "nom_mun": "CAROLINA",
+        "id": "161"
+    },
+    {
+        "nom_mun": "SAN ANTONIO",
+        "id": "162"
+    },
+    {
+        "nom_mun": "CIUDAD BARRIOS",
+        "id": "163"
+    },
+    {
+        "nom_mun": "CHAPELTIQUE",
+        "id": "164"
+    },
+    {
+        "nom_mun": "LOLOTIQUE",
+        "id": "165"
+    },
+    {
+        "nom_mun": "MONCAGUA",
+        "id": "166"
+    },
+    {
+        "nom_mun": "NUEVA GUADALUPE",
+        "id": "167"
+    },
+    {
+        "nom_mun": "CHINAMECA",
+        "id": "168"
+    },
+    {
+        "nom_mun": "SAN JORGE",
+        "id": "169"
+    },
+    {
+        "nom_mun": "COMACARAN",
+        "id": "176"
+    },
+    {
+        "nom_mun": "SOCIEDAD",
+        "id": "177"
+    },
+    {
+        "nom_mun": "CACAOPERA",
+        "id": "178"
+    },
+    {
+        "nom_mun": "SAN FERNANDO",
+        "id": "179"
+    },
+    {
+        "nom_mun": "ARAMBALA",
+        "id": "180"
+    },
+    {
+        "nom_mun": "SAN ISIDRO",
+        "id": "184"
+    },
+    {
+        "nom_mun": "PERQUIN",
+        "id": "181"
+    },
+    {
+        "nom_mun": "SAN ANTONIO DEL MONTE",
+        "id": "199"
+    },
+    {
+        "nom_mun": "SONSONATE",
+        "id": "200"
+    },
+    {
+        "nom_mun": "SAN JULIAN",
+        "id": "201"
+    },
+    {
+        "nom_mun": "ARMENIA",
+        "id": "202"
+    },
+    {
+        "nom_mun": "IZALCO",
+        "id": "203"
+    },
+    {
+        "nom_mun": "SANTA CATARINA MASAHUAT",
+        "id": "204"
+    },
+    {
+        "nom_mun": "SALCOATITAN",
+        "id": "205"
+    },
+    {
+        "nom_mun": "NAHUIZALCO",
+        "id": "206"
+    },
+    {
+        "nom_mun": "JUAYUA",
+        "id": "207"
+    },
+    {
+        "nom_mun": "SONZACATE",
+        "id": "208"
+    },
+    {
+        "nom_mun": "ROSARIO DE MORA",
+        "id": "209"
+    },
+    {
+        "nom_mun": "PANCHIMALCO",
+        "id": "210"
+    },
+    {
+        "nom_mun": "SAN MARCOS",
+        "id": "211"
+    },
+    {
+        "nom_mun": "SANTO TOMAS",
+        "id": "212"
+    },
+    {
+        "nom_mun": "SANTIAGO TEXACUANGOS",
+        "id": "213"
+    },
+    {
+        "nom_mun": "ILOPANGO",
+        "id": "214"
+    },
+    {
+        "nom_mun": "CUSCATANCINGO",
+        "id": "215"
+    },
+    {
+        "nom_mun": "SOYAPANGO",
+        "id": "216"
+    },
+    {
+        "nom_mun": "SAN SALVADOR",
+        "id": "217"
+    },
+    {
+        "nom_mun": "MEJICANOS",
+        "id": "218"
+    },
+    {
+        "nom_mun": "AYUTUXTEPEQUE",
+        "id": "219"
+    },
+    {
+        "nom_mun": "JOCOAITIQUE",
+        "id": "182"
+    },
+    {
+        "nom_mun": "DELGADO",
+        "id": "220"
+    },
+    {
+        "nom_mun": "SAN MARTIN",
+        "id": "221"
+    },
+    {
+        "nom_mun": "TONACATEPEQUE",
+        "id": "222"
+    },
+    {
+        "nom_mun": "APOPA",
+        "id": "223"
+    },
+    {
+        "nom_mun": "NEJAPA",
+        "id": "224"
+    },
+    {
+        "nom_mun": "GUAZAPA",
+        "id": "225"
+    },
+    {
+        "nom_mun": "AGUILARES",
+        "id": "226"
+    },
+    {
+        "nom_mun": "EL PAISNAL",
+        "id": "227"
+    },
+    {
+        "nom_mun": "SAN PEDRO PUXTLA",
+        "id": "228"
+    },
+    {
+        "nom_mun": "JUJUTLA",
+        "id": "229"
+    },
+    {
+        "nom_mun": "APANECA",
+        "id": "230"
+    },
+    {
+        "nom_mun": "CONCEPCION DE ATACO",
+        "id": "231"
+    },
+    {
+        "nom_mun": "SAN FRANCISCO MENENDEZ",
+        "id": "232"
+    },
+    {
+        "nom_mun": "TACUBA",
+        "id": "233"
+    },
+    {
+        "nom_mun": "TURIN",
+        "id": "234"
+    },
+    {
+        "nom_mun": "EL REFUGIO",
+        "id": "235"
+    },
+    {
+        "nom_mun": "ATIQUIZAYA",
+        "id": "236"
+    },
+    {
+        "nom_mun": "AHUACHAPAN",
+        "id": "237"
+    },
+    {
+        "nom_mun": "SAN LORENZO",
+        "id": "238"
+    },
+    {
+        "nom_mun": "TOROLA",
+        "id": "183"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "240"
+    },
+    {
+        "nom_mun": "LA LIBERTAD",
+        "id": "241"
+    },
+    {
+        "nom_mun": "JICALAPA",
+        "id": "242"
+    },
+    {
+        "nom_mun": "ZARAGOZA",
+        "id": "243"
+    },
+    {
+        "nom_mun": "EL ROSARIO",
+        "id": "185"
+    },
+    {
+        "nom_mun": "MEANGUERA",
+        "id": "186"
+    },
+    {
+        "nom_mun": "JOATECA",
+        "id": "187"
+    },
+    {
+        "nom_mun": "SAN SIMON",
+        "id": "188"
+    },
+    {
+        "nom_mun": "SAN JOSE VILLANUEVA",
+        "id": "244"
+    },
+    {
+        "nom_mun": "HUIZUCAR",
+        "id": "245"
+    },
+    {
+        "nom_mun": "TAMANIQUE",
+        "id": "246"
+    },
+    {
+        "nom_mun": "CHILTIUPAN",
+        "id": "247"
+    },
+    {
+        "nom_mun": "GUALOCOCTI",
+        "id": "189"
+    },
+    {
+        "nom_mun": "SAN PABLO TACACHICO",
+        "id": "262"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "263"
+    },
+    {
+        "nom_mun": "DELICIAS DE CONCEPCION",
+        "id": "190"
+    },
+    {
+        "nom_mun": "YOLOAIQUIN",
+        "id": "191"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "264"
+    },
+    {
+        "nom_mun": "MERCEDES UMANA",
+        "id": "192"
+    },
+    {
+        "nom_mun": "OSICALA",
+        "id": "193"
+    },
+    {
+        "nom_mun": "SANTA ISABEL ISHUATAN",
+        "id": "194"
+    },
+    {
+        "nom_mun": "CUISNAHUAT",
+        "id": "195"
+    },
+    {
+        "nom_mun": "ACAJUTLA",
+        "id": "196"
+    },
+    {
+        "nom_mun": "NAHULINGO",
+        "id": "197"
+    },
+    {
+        "nom_mun": "CALUCO",
+        "id": "198"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "239"
+    },
+    {
+        "nom_mun": "NUEVO CUSCATLAN",
+        "id": "248"
+    },
+    {
+        "nom_mun": "TEOTEPEQUE",
+        "id": "249"
+    },
+    {
+        "nom_mun": "COMASAGUA",
+        "id": "250"
+    },
+    {
+        "nom_mun": "ANTIGUO CUSCATLAN",
+        "id": "251"
+    },
+    {
+        "nom_mun": "TALNIQUE",
+        "id": "252"
+    },
+    {
+        "nom_mun": "JAYAQUE",
+        "id": "253"
+    },
+    {
+        "nom_mun": "TEPECOYO",
+        "id": "254"
+    },
+    {
+        "nom_mun": "SANTA TECLA",
+        "id": "255"
+    },
+    {
+        "nom_mun": "COLON",
+        "id": "256"
+    },
+    {
+        "nom_mun": "SACACOYO",
+        "id": "257"
+    },
+    {
+        "nom_mun": "CIUDAD ARCE",
+        "id": "258"
+    },
+    {
+        "nom_mun": "QUEZALTEPEQUE",
+        "id": "259"
+    },
+    {
+        "nom_mun": "SAN MATIAS",
+        "id": "260"
+    },
+    {
+        "nom_mun": "SAN JUAN OPICO",
+        "id": "261"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "265"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "266"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "267"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "268"
+    },
+    {
+        "nom_mun": "ZONA DE DEMARCACION LIMITROFE",
+        "id": "269"
+    },
+    {
+        "nom_mun": "GUAYMANGO",
+        "id": "270"
+    },
+    {
+        "nom_mun": "SANTO DOMINGO DE GUZMAN",
+        "id": "271"
+    }
+]
