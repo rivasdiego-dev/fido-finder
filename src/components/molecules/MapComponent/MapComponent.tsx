@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   MapContainer,
   Marker,

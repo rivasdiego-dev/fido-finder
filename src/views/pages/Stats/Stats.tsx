@@ -4,9 +4,9 @@ import {
   Card,
   CardBody,
   CardHeader,
-} from '@nextui-org/react';
-import { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+} from "@nextui-org/react";
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -16,19 +16,19 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
-import MapComponent from '../../../components/molecules/MapComponent';
+} from "recharts";
+import MapComponent from "../../../components/molecules/MapComponent";
 import {
   getLostPetsByOneDepartment,
   getLostPetsByOneMunicipality,
-} from '../../../lib/services/stats.service';
-import departmentsData from '../../../lib/utils/departments.json';
-import extractCoordinates from '../../../lib/utils/extractCoordinates';
-import municipalitiesData from '../../../lib/utils/municipalities.json';
+} from "../../../lib/services/stats.service";
+import departmentsData from "../../../lib/utils/departments.json";
+import extractCoordinates from "../../../lib/utils/extractCoordinates";
+import municipalitiesData from "../../../lib/utils/municipalities.json";
 
 export default function Stats() {
-  const [selectedDepartment, setSelectedDepartment] = useState<string>('');
-  const [selectedMunicipality, setSelectedMunicipality] = useState<string>('');
+  const [selectedDepartment, setSelectedDepartment] = useState<string>("");
+  const [selectedMunicipality, setSelectedMunicipality] = useState<string>("");
 
   const [departmentPoints, setDepartmentPoints] = useState<
     { lat: number; lng: number }[]
@@ -38,45 +38,53 @@ export default function Stats() {
   >([]);
 
   useEffect(() => {
-    getLostPetsByOneDepartment(selectedDepartment).then((res) => {
-      if (res.isError) {
-        console.warn('Error fetching lost pets by department');
-        return;
-      }
+    const setData = async (selectedDepartment: string) => {
+      getLostPetsByOneDepartment(selectedDepartment).then((res) => {
+        if (res.isError) {
+          console.warn("Error fetching lost pets by department");
+          return;
+        }
 
-      const { data } = res.response as { data: { geom: string }[] };
+        const { data } = res.response as { data: { geom: string }[] };
 
-      const mappedData = data.map((data) => {
-        const coordinates = extractCoordinates(data.geom);
-        return {
-          lat: coordinates.lat,
-          lng: coordinates.lng,
-        };
+        const mappedData = data.map((data) => {
+          const coordinates = extractCoordinates(data.geom);
+          return {
+            lat: coordinates.lat,
+            lng: coordinates.lng,
+          };
+        });
+
+        setDepartmentPoints(mappedData);
       });
+    };
 
-      setDepartmentPoints(mappedData);
-    });
+    if (selectedDepartment) setData(selectedDepartment);
   }, [selectedDepartment]);
 
   useEffect(() => {
-    getLostPetsByOneMunicipality(selectedMunicipality).then((res) => {
-      if (res.isError) {
-        console.warn('Error fetching lost pets by municipality');
-        return;
-      }
+    const setData = async (selectedMunicipality: string) => {
+      getLostPetsByOneMunicipality(selectedMunicipality).then((res) => {
+        if (res.isError) {
+          console.warn("Error fetching lost pets by municipality");
+          return;
+        }
 
-      const { data } = res.response as { data: { geom: string }[] };
+        const { data } = res.response as { data: { geom: string }[] };
 
-      const mappedData = data.map((data) => {
-        const coordinates = extractCoordinates(data.geom);
-        return {
-          lat: coordinates.lat,
-          lng: coordinates.lng,
-        };
+        const mappedData = data.map((data) => {
+          const coordinates = extractCoordinates(data.geom);
+          return {
+            lat: coordinates.lat,
+            lng: coordinates.lng,
+          };
+        });
+
+        setMunicipalityPoints(mappedData);
       });
+    };
 
-      setMunicipalityPoints(mappedData);
-    });
+    if (selectedMunicipality) setData(selectedMunicipality);
   }, [selectedMunicipality]);
 
   const loaderdata = useLoaderData() as {
@@ -182,13 +190,13 @@ export default function Stats() {
                     <CartesianGrid strokeDasharray="1 1" />
                     <XAxis dataKey="department" />
                     <YAxis />
-                    <Tooltip labelStyle={{ color: 'black' }} />
+                    <Tooltip labelStyle={{ color: "black" }} />
                     <Legend />
                     <Bar
                       dataKey="lost_pets_count"
                       name="Mascotas perdidas"
                       fill="#C3C3C3"
-                      activeBar={{ fill: '#5B9AD5' }}
+                      activeBar={{ fill: "#5B9AD5" }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -207,13 +215,13 @@ export default function Stats() {
                     <CartesianGrid strokeDasharray="1 1" />
                     <XAxis dataKey="municipality" />
                     <YAxis />
-                    <Tooltip labelStyle={{ color: 'black' }} />
+                    <Tooltip labelStyle={{ color: "black" }} />
                     <Legend />
                     <Bar
                       dataKey="lost_pets_count"
                       name="Mascotas perdidas"
                       fill="#C3C3C3"
-                      activeBar={{ fill: '#5B9AD5' }}
+                      activeBar={{ fill: "#5B9AD5" }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -231,13 +239,13 @@ export default function Stats() {
                     <CartesianGrid strokeDasharray="1 1" />
                     <XAxis dataKey="colonia" />
                     <YAxis />
-                    <Tooltip labelStyle={{ color: 'black' }} />
+                    <Tooltip labelStyle={{ color: "black" }} />
                     <Legend />
                     <Bar
                       dataKey="lost_pets_count"
                       name="Mascotas perdidas"
                       fill="#C3C3C3"
-                      activeBar={{ fill: '#5B9AD5' }}
+                      activeBar={{ fill: "#5B9AD5" }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
