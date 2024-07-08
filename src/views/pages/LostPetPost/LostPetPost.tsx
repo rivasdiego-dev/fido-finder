@@ -123,9 +123,16 @@ export default function LostPetPost() {
               </Button>
             </Link>
 
-            <Button size="lg" color="primary" fullWidth>
-              Contactar dueño
-            </Button>
+            {
+              data.author_id !== user?.id &&
+              (
+                <Link to={`/profile/${data.author_id}`}>
+                  <Button size="lg" color="primary" fullWidth>
+                    Contactar dueño
+                  </Button>
+                </Link>
+              )
+            }
           </div>
         </div>
       )}

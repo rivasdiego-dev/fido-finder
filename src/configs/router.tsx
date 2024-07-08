@@ -31,8 +31,8 @@ import ReportPet from '../views/pages/ReportPet';
 import Search from '../views/pages/Search';
 import Stats from '../views/pages/Stats';
 import User from '../views/pages/User';
-import VerifyToken from '../views/pages/VerifyToken';
 import UserProfile from '../views/pages/UserProfile';
+import VerifyToken from '../views/pages/VerifyToken';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -57,7 +57,10 @@ export const router = createBrowserRouter(
             loader={EditPetLoader}
           />
           <Route path="/profile" element={<User />} />
-          <Route path="/profile/:id" element={<UserProfile />} />
+          <Route
+            path="/profile/:id"
+            element={<UserProfile />}
+          />
           <Route path="/profile/edit" element={<EditUser />} />
           <Route path="/profile/edit/residence" element={<EditResidence />} />
           <Route

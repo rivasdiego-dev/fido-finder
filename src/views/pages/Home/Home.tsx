@@ -32,6 +32,7 @@ const Home = () => {
               <CardImage
                 key={id}
                 avatarUrl={finalImg}
+                userId={users.id}
                 user={users.name!}
                 date={finalDate}
                 location={finalLocation}

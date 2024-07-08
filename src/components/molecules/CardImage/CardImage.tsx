@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 type CardImageProps = {
   avatarUrl: string;
+  userId: string;
   user: string;
   date: string;
   location: string;
@@ -15,22 +16,24 @@ type CardImageProps = {
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { avatarUrl, user, date, location, petImg, petName, postId, petId } =
+  const { avatarUrl, user, date, location, petImg, petName, postId, petId, userId } =
     props;
   return (
     <div className="w-full flex flex-col gap-1 font-roboto-condensed">
       {/* Label */}
-      <div className="flex gap-2">
-        <img
-          src={avatarUrl ? avatarUrl : 'img/user.png'}
-          alt="User"
-          className="w-10 h-10 object-cover rounded-full"
-        />
-        <div className="flex flex-col justify-evenly">
-          <p className="text-base font-normal leading-none">{user}</p>
-          <p className="text-sm font-normal leading-none">{date}</p>
+      <Link to={`/profile/${userId}`} >
+        <div className="flex gap-2">
+          <img
+            src={avatarUrl ? avatarUrl : 'img/user.png'}
+            alt="User"
+            className="w-10 h-10 object-cover rounded-full"
+          />
+          <div className="flex flex-col justify-evenly">
+            <p className="text-base font-normal leading-none">{user}</p>
+            <p className="text-sm font-normal leading-none">{date}</p>
+          </div>
         </div>
-      </div>
+      </Link>
       {/* Post */}
       <div className="flex flex-col justify-center items-center gap-4 w-full p-4 bg-b-base-foreground rounded-xl">
         <Link to={`/pet/${petId}`} className="w-full">
