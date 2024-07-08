@@ -20,8 +20,8 @@ export default function LostPetPost() {
   const [lastSeen, setLastSeen] = useState<string>(new Date().toISOString());
   const [loading, setLoading] = useState(true);
   const [lastReport, setLastReport] = useState<{ lat: number; lng: number }>({
-    lat: 0,
-    lng: 0,
+    lat: 13.70126931473921,
+    lng: -89.22451972961427,
   });
 
   useEffect(() => {
