@@ -1,11 +1,13 @@
-import { Button } from '@nextui-org/react';
-import { IconEdit } from '@tabler/icons-react';
-import { QRCodeCanvas } from 'qrcode.react';
-import { useEffect, useRef, useState } from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import PetImage from '../../../components/atoms/PetImage';
-import { getOneUser } from '../../../lib/services/users.service';
-import { useUserStore } from '../../../lib/store/user';
+import { Button } from "@nextui-org/react";
+import { IconEdit } from "@tabler/icons-react";
+import { QRCodeCanvas } from "qrcode.react";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import PetImage from "../../../components/atoms/PetImage";
+import { getOneUser } from "../../../lib/services/users.service";
+import { useUserStore } from "../../../lib/store/user";
+import { deletePet } from "../../../lib/services/pets.service";
+import { toast } from "sonner";
 
 const Pet = () => {
   const { pet } = useLoaderData() as { pet: ApiPet };
@@ -13,11 +15,12 @@ const Pet = () => {
   const [owner, setOwner] = useState<User>();
   const qrCodeRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleOwnerData = async () => {
     const ownerResponse = await getOneUser(pet.owner_id);
     if (ownerResponse.isError) {
-      navigate('/');
+      navigate("/");
       return;
     }
 
@@ -32,15 +35,30 @@ const Pet = () => {
 
   const downloadQR = () => {
     if (qrCodeRef.current) {
-      const canvas = qrCodeRef.current.querySelector('canvas');
+      const canvas = qrCodeRef.current.querySelector("canvas");
       if (canvas) {
-        const url = canvas.toDataURL('image/png');
-        const link = document.createElement('a');
+        const url = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
         link.href = url;
         link.download = `${pet.name}-qr-code.png`;
         link.click();
       }
     }
+  };
+
+  const onDeletePet = async (petId: string) => {
+    if (!petId) return;
+
+    setIsLoading(true);
+    const res = await deletePet(petId);
+    setIsLoading(false);
+
+    if (res.isError) {
+      toast.error("error deleting pet");
+      return;
+    }
+    toast.success("pet has been deleted");
+    navigate("/profile");
   };
 
   return owner ? (
@@ -56,7 +74,7 @@ const Pet = () => {
             </Button>
           </Link>
         ) : (
-          ''
+          ""
         )}
 
         <PetImage
@@ -84,28 +102,41 @@ const Pet = () => {
           <QRCodeCanvas
             value={pet.id}
             size={175}
-            bgColor={'#ffffff'}
-            fgColor={'#000000'}
-            level={'H'}
+            bgColor={"#ffffff"}
+            fgColor={"#000000"}
+            level={"H"}
             includeMargin={false}
           />
         </div>
         <p className="font-roboto text-xl mt-3">Código QR de {pet.name}</p>
         {user?.id === pet.owner_id ? (
-          <Button
-            onClick={downloadQR}
-            fullWidth
-            radius="sm"
-            className="mt-3 max-w-xs"
-            variant="faded"
-          >
-            Descargar QR
-          </Button>
+          <>
+            <Button
+              onClick={downloadQR}
+              fullWidth
+              radius="sm"
+              className="mt-3 max-w-xs"
+              variant="faded"
+            >
+              Descargar QR
+            </Button>
+            <Button
+              size="lg"
+              color="danger"
+              variant="shadow"
+              fullWidth
+              onClick={() => onDeletePet(pet.id)}
+              disabled={isLoading}
+              className="mt-3 max-w-xs"
+            >
+              Eliminar mascota
+            </Button>
+          </>
         ) : null}
       </div>
     </div>
   ) : (
-    ''
+    ""
   );
 };
 
