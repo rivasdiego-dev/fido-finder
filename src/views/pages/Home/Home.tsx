@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CardImage from '../../../components/molecules/CardImage';
 import NotRegistered from '../../../components/molecules/NotRegistered';
 import { useLoaderData } from 'react-router-dom';
-import formatDateTime from '../../../lib/utils/formatDateTime';
+// import formatDateTime from '../../../lib/utils/formatDateTime';
 import { format, parse } from '@formkit/tempo';
 
 const Home = () => {
