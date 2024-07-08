@@ -8,13 +8,13 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'FidoFinder',
-        short_name: 'AppNFidoFinderame',
+        name: 'Fido Finder',
+        short_name: 'FidoFinder',
         description: 'Busca y encuentra mascotas!',
-        theme_color: '#ffffff',
+        theme_color: '#222831',
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff',
+        background_color: '#13161B',
         icons: [
           {
             "src": "windows11/SmallTile.scale-100.png",
