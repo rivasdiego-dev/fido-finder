@@ -24,7 +24,7 @@ const EditUser = () => {
     defaultValues: {
       name: user?.name ?? '',
       lastname: user?.lastname ?? '',
-      dob: user?.dob ?? '',
+      dob: user?.dob?.split('T')[0] ?? '',
       phone_number: user?.phone_number ?? '',
     }
   });
