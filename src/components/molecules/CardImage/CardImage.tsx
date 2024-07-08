@@ -2,9 +2,11 @@ import { Button } from '@nextui-org/react';
 import PetImage from '../../atoms/PetImage';
 import { IconMapPin } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
+import { useUserStore } from '../../../lib/store/user';
 
 type CardImageProps = {
   avatarUrl: string;
+  userId: string;
   user: string;
   date: string;
   location: string;
@@ -15,22 +17,26 @@ type CardImageProps = {
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { avatarUrl, user, date, location, petImg, petName, postId, petId } =
-    props;
+  const { avatarUrl, user, date, location, petImg, petName, postId, petId, userId } = props;
+  const userData = useUserStore((state) => state.user);
+
+
   return (
     <div className="w-full flex flex-col gap-1 font-roboto-condensed">
       {/* Label */}
-      <div className="flex gap-2">
-        <img
-          src={avatarUrl ? avatarUrl : 'img/user.png'}
-          alt="User"
-          className="w-10 h-10 object-cover rounded-full"
-        />
-        <div className="flex flex-col justify-evenly">
-          <p className="text-base font-normal leading-none">{user}</p>
-          <p className="text-sm font-normal leading-none">{date}</p>
+      <Link to={`/profile/${userId}`} >
+        <div className="flex gap-2">
+          <img
+            src={avatarUrl ? avatarUrl : 'img/user.png'}
+            alt="User"
+            className="w-10 h-10 object-cover rounded-full"
+          />
+          <div className="flex flex-col justify-evenly">
+            <p className="text-base font-normal leading-none">{user}</p>
+            <p className="text-sm font-normal leading-none">{date}</p>
+          </div>
         </div>
-      </div>
+      </Link>
       {/* Post */}
       <div className="flex flex-col justify-center items-center gap-4 w-full p-4 bg-b-base-foreground rounded-xl">
         <Link to={`/pet/${petId}`} className="w-full">
@@ -52,7 +58,7 @@ const CardImage = (props: CardImageProps) => {
           </Link>
         </div>
         <div className="flex justify-center gap-2 w-full">
-          <Link to={`/post/${postId}`}>
+          <Link to={`/post/${postId}`} className='w-full'>
             <Button
               color="primary"
               fullWidth
@@ -63,17 +69,20 @@ const CardImage = (props: CardImageProps) => {
               Ver publicación
             </Button>
           </Link>
-          <Link to={`/post/${postId}/report`}>
-            <Button
-              color="primary"
-              fullWidth
-              size="lg"
-              radius="sm"
-              variant="solid"
-            >
-              Reportar
-            </Button>
-          </Link>
+          {
+            userData?.id !== userId &&
+            <Link to={`/post/${postId}/report`} className='w-full'>
+              <Button
+                color="primary"
+                fullWidth
+                size="lg"
+                radius="sm"
+                variant="solid"
+              >
+                Reportar
+              </Button>
+            </Link>
+          }
         </div>
       </div>
     </div>

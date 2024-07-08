@@ -4,12 +4,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@nextui-org/react';
-import { IconMapPin } from '@tabler/icons-react';
+import { IconMail, IconMapPin, IconPhone } from '@tabler/icons-react';
 
 type UserDetailsProps = {
   name: string;
   email: string;
-  location: string;
+  location?: string;
   img: string | null;
   phone: string | null;
 };
@@ -31,10 +31,13 @@ const UserDetails = (props: UserDetailsProps) => {
         <p className="font-quicksand font-bold text-center text-xl text-b-base-text leading-none">
           {name}
         </p>
-        <div className="flex gap-1 justify-center items-center">
-          <IconMapPin size={14} />
-          {location ? <p>{location}</p> : <p>N/D</p>}
-        </div>
+        {
+          location &&
+          <div className="flex gap-1 justify-center items-center">
+            <IconMapPin size={14} />
+            <p>{location}</p>
+          </div>
+        }
       </div>
       <div className="flex justify-evenly w-9/12">
         <Popover placement="bottom" showArrow={true}>
@@ -45,7 +48,7 @@ const UserDetails = (props: UserDetailsProps) => {
               variant="faded"
               aria-label="Take a photo"
             >
-              <img src="img/Mail.png" alt="Mail" />
+              <IconMail />
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -67,7 +70,7 @@ const UserDetails = (props: UserDetailsProps) => {
               variant="faded"
               aria-label="Take a photo"
             >
-              <img src="img/Phone.png" alt="Phone" />
+              <IconPhone />
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -76,9 +79,12 @@ const UserDetails = (props: UserDetailsProps) => {
                 {phone ? phone : 'N/D'}
               </div>
               <div className="self-end">
-                <Button color="primary" variant="flat" size="sm">
-                  Contactar
-                </Button>
+                {phone &&
+                  (
+                    <Button color="primary" variant="flat" size="sm">
+                      Contactar
+                    </Button>
+                  )}
               </div>
             </div>
           </PopoverContent>
