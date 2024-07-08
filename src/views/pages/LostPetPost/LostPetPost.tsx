@@ -149,7 +149,7 @@ export default function LostPetPost() {
           />
 
           {(data.author_id !== user?.id || data.is_lost) && (
-            <div className="flex gap-2">
+            <div className="flex gap-2 w-full">
               <Link to={`/post/${data.id}/report`}>
                 <Button size="lg" color="primary" variant="flat">
                   Reportar
